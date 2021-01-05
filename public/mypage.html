@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description"
+		content="A perfume is like a piece of clothing, a message, a way of presenting oneself a costume that according to the person who wears it.">
+	<link rel="stylesheet" href="css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+		crossorigin="anonymous" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<title>d’Perfume</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<header class="navbar navbar-expand-lg container-fluid sticky-top bg-white p-0 p-md-1">
+		<div class="container">
+			<h1 class="m-0 ml-5 ml-md-0">
+				<a class="navbar-brand align-middle" href="index.html">d’Perfume</a>
+			</h1>
+			<a class="text-secondary-dark d-block d-md-none p-4 ml-auto" href="#">
+				<i class="fas fa-shopping-cart position-relative"><span
+						class="navbar-num badge badge-pill badge-primary position-absolute">3</span></i></a>
+			<button class="navbar-toggler py-2 d-md-none d-block my-0 px-4" type="button" data-toggle="collapse"
+				data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars text-secondary-dark h2 my-auto"></i>
+			</button>
+			<ul class="navbar-nav d-md-flex d-none flex-md-row">
+				<li class="nav-item">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="product-list.html"><i
+							class="fas fa-tshirt"></i> Product</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="login.html"><i
+							class="fas fa-user-alt"></i>
+						log in </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#"><i
+							class="fas fa-heart"></i>
+						Wishlist</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#"><i
+							class="fas fa-shopping-cart"></i>
+						Cart(3)</a>
+				</li>
+			</ul>
+		</div>
+		<!-- mobile navbar -->
+		<div class="collapse navbar-collapse bg-secondary d-md-none text-center" id="navbar">
+			<ul class="navbar-nav d-md-none d-flex">
+				<li class="nav-item">
+					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="product-list.html">Product</a>
+				</li>
+				<li class="nav-item border-top border-light">
+					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="#">Wishlist</a>
+				</li>
+				<li class="nav-item border-top border-light">
+					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="#">Blog</a>
+				</li>
+				<li class="nav-item border-top border-light">
+					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="#">Contact</a>
+				</li>
+				<li class="nav-item border-top border-light">
+					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="mypage.html">Mypage</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!-- brands -->
+	<div class="brand-links bg-primary d-none d-md-block container-fluid mb-10 mb-md-5 mb-lg-14">
+		<div class="container">
+			<nav class="navbar navbar-dark col-12 p-0">
+				<ul class="navbar-nav flex-row">
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">CHANEL</a>
+					</li>
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">Jo Malone</a>
+					</li>
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">Curology</a>
+					</li>
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">Dior</a>
+					</li>
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">Chloe</a>
+					</li>
+					<li class="nav-item pr-7">
+						<a class="nav-link h5 font-weight-normal my-auto" href="#">ZARA</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- customize block -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2" data-aos="fade-up">
+				<h2 class="h5 d-none d-lg-block text-gray-light mb-md-7">會員中心</h2>
+				<ul class="mypage-nav nav flex-lg-column justify-content-between justify-content-md-around justify-content-lg-between my-10 mt-md-0 mb-md-5 mb-lg-0">
+					<li class="nav-item mb-lg-6"><a class="nav-link text-gray-light d-inline-block active disabled p-0"
+							href="#" tabindex="-1" aria-disabled="true">會員資料修改</a></li>
+					<li class="nav-item mb-lg-6"><a class="nav-link text-gray-light hover-primary d-inline-block p-0"
+							href="#">訂單查詢</a></li>
+					<li class="nav-item mb-lg-6"><a class="nav-link text-gray-light hover-primary d-inline-block p-0"
+							href="#">退／換貨申請</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-7 order-2 order-lg-1">
+				<h3 class="h6 border-bottom border-gray pb-2" data-aos="fade-up">個人資料修改</h3>
+				<form class="mb-11" data-aos="fade-up">
+					<div class="form-group row">
+						<label for="userAccount"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">會員帳號</label>
+						<div class="col-8 col-md-7">
+							<input type="text" readonly class="form-control-plaintext" id="userAccount"
+								value="email@example.com">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="username"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">會員姓名</label>
+						<div class="col-8 col-md-7">
+							<input type="text" class="form-control" id="username">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="gender"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">會員性別</label>
+						<div class="col-3 col-md-2">
+							<select id="gender" class="form-control">
+								<option selected>女</option>
+								<option>男</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="email"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">電子信箱</label>
+						<div class="col-8 col-md-7">
+							<input type="email" class="form-control" id="email" placeholder="email@example.com">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="userPhoneNumber"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">手機號碼</label>
+						<div class="col-8 col-md-7">
+							<input type="number" class="form-control" id="userPhoneNumber">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="address"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">聯絡地址</label>
+						<div class="col-8 col-md-7">
+							<div class="form-row mb-2">
+								<div class="col-9 col-md-6">
+									<select id="country" class="form-control">
+										<option selected>台灣及離島</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-row mb-2">
+								<div class="col-6">
+									<select id="city" class="form-control">
+										<option selected>高雄市</option>
+									</select>
+								</div>
+								<div class="col-6 text-gray">
+									<select id="area" class="form-control">
+										<option selected>鹽埕區</option>
+									</select>
+								</div>
+							</div>
+							<input type="text" class="col-md-12 form-control mb-3" id="address" placeholder="請輸入地址">
+							<div class="col-md-12 custom-control custom-checkbox mb-5">
+								<input type="checkbox" class="custom-control-input" id="subscribeCheck">
+								<label class="text-gray custom-control-label" for="subscribeCheck">我願意收到最新優惠情報</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="post-address"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">配送地址</label>
+						<div class="col-8 col-md-7">
+							<div class="form-row mb-2">
+								<div class="col-9 col-md-6">
+									<select id="country" class="form-control">
+										<option selected>台灣及離島</option>
+										<option>台灣</option>
+										<option>離島</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-row mb-2">
+								<div class="col-6">
+									<select id="city" class="form-control">
+										<option selected>高雄市</option>
+										<option>台北市</option>
+									</select>
+								</div>
+								<div class="col-6">
+									<select id="area" class="form-control">
+										<option selected>鹽埕區</option>
+										<option>信義區</option>
+									</select>
+								</div>
+							</div>
+							<input type="text" class="col-md-12 form-control" id="post-address" placeholder="請輸入地址">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="offset-4 offset-sm-3 offset-md-2 col-6 col-md-4">
+							<button type="submit" class="btn btn-primary w-100 m-0">確定修改</button>
+						</div>
+					</div>
+				</form>
+				<h3 class="h6 border-bottom border-gray pb-2 mb-4" data-aos="fade-up">修改密碼</h3>
+				<form class="mb-md-10 mb-lg-13" data-aos="fade-up">
+					<div class="form-group row">
+						<label for="oldpw"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">舊密碼</label>
+						<div class="col-8 col-md-7">
+							<input type="password" class="form-control" id="oldpw">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="newpw"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">新密碼</label>
+						<div class="col-8 col-md-7">
+							<input type="password" class="form-control" id="newpw">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="newpw-check"
+							class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">確認新密碼</label>
+						<div class="col-8 col-md-7">
+							<input type="password" class="form-control" id="newpw-check">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="offset-4 offset-sm-3 offset-md-2 col-6 col-md-4">
+							<button type="submit" class="btn btn-primary w-100 m-0">變更密碼</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-3 order-1 order-lg-2 mb-10 mb-lg-0" data-aos="fade-up">
+				<div class="d-flex align-items-center mb-6">
+					<i class="fas fa-user-alt align-middle"></i>
+					<h4 class="h6 text-gray text-nowrap font-weight-normal mb-0 ml-2">會員編碼</h4>
+					<h4 class="h5 text-secondary-dark mb-0 ml-2">T00020080615</h4>
+				</div>
+				<div class="row mb-4">
+					<div class="col-4 col-md-2 col-lg-5 col-xl-4 text-gray text-nowrap">購物車</div>
+					<div class="col-8 col-md-8 col-lg-7 col-xl-8 text-gray">56</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-4 col-md-2 col-lg-5 col-xl-4 text-gray text-nowrap">我的收藏</div>
+					<div class="col-8 col-md-8 col-lg-7 col-xl-8 text-gray">23</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-4 col-md-2 col-lg-5 col-xl-4 text-gray text-nowrap">已完成訂單</div>
+					<div class="col-8 col-md-8 col-lg-7 col-xl-8 text-gray">8</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-4 col-md-2 col-lg-5 col-xl-4 text-gray text-nowrap">會員紅利</div>
+					<div class="col-8 col-md-8 col-lg-7 col-xl-8 text-gray">2680</div>
+				</div>
+				<div class="row">
+					<div class="col-4 col-md-2 col-lg-5 col-xl-4 text-gray text-nowrap">專屬邀請碼</div>
+					<div class="col-8 col-md-8 col-lg-8 col-xl-8 text-gray">TK2075</div>
+					<p class="col-md-12 mb-0 text-gray-dark"><small>新戶輸入邀請碼即可獲贈紅利點數1000點</small></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<footer class="container-fluid bg-primary px-0 py-4">
+		<div class="container d-flex justify-content-between align-items-center">
+			<a class="navbar-brand align-middle" href="index.html">
+				<img src="img/d’Perfumew.png" srcset="img/d’Perfumew.png 1x, img/d’Perfumew@2x.png 2x">
+				<span class="d-none">d’Perfume</span>
+			</a>
+			<p class="text-white my-auto ml-1"><small>© 2020. All Rights Reserved.</small></p>
+			<nav class="navbar navbar-dark d-none d-md-block p-0 ml-auto">
+				<ul class="navbar-nav flex-row">
+					<li class="nav-item">
+						<a class="nav-link h5 font-weight-normal pl-9" href="product-list.html">Product</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link h5 font-weight-normal pl-9" href="#">Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link h5 font-weight-normal pl-9" href="#">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+	<!-- bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<!-- AOS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			// Global settings:
+			disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+			startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+			initClassName: 'aos-init', // class applied after initialization
+			animatedClassName: 'aos-animate', // class applied on animation
+			useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+			disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+			debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+			throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+			// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+			offset: 10, // offset (in px) from the original trigger point
+			delay: 0, // values from 0 to 3000, with step 50ms
+			duration: 400, // values from 0 to 3000, with step 50ms
+			easing: 'ease', // default easing for AOS animations
+			once: true, // whether animation should happen only once - while scrolling down
+			mirror: false, // whether elements should animate out while scrolling past them
+			anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+		});
+	</script>
+</body>
+
+</html>

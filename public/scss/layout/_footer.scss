@@ -1,0 +1,18 @@
+.subscribe {
+    @include background-image($subscribe-mobile-url, auto, $subscribe-height, cover);
+    input {
+        height: 60px;
+        outline: none;
+        border: 2px solid;
+        border-radius: 4px 0px 0px 4px;
+    }
+    button {
+        border-radius: 0px 4px 4px 0px;
+    }
+}
+
+@include media-breakpoint-between(md, xl) {
+    .subscribe {
+        @include background-image($subscribe-url, $subscribe-width, $subscribe-height, cover);
+    }
+}
