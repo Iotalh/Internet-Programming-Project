@@ -1,4 +1,3 @@
 # Perfume Online Shopping
 
-Internet Programming Final Project
-@@
+Internet Programming Final Projects
