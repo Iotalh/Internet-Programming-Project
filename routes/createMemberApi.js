@@ -7,8 +7,8 @@ const memberModel = require('../models/memberModels');
 //註冊功能路由
 router.post('/register', function(req, res){
 const newMember = new memberModel({
-userRole:"member",
-userName: req.body.name,
+userRole:req.body.userRole,
+userName: req.body.userName,
 account: req.body.account,
 password: req.body.password
 });

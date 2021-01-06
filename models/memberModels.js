@@ -7,7 +7,7 @@ db.once('open', function() {
 console.log("連線成功");
 });
 const memberSchema = new mongoose.Schema({
-// userRole:String,
+userRole:String,
 userName: String,
 account: String,
 password: String
