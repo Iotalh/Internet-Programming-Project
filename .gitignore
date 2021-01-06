@@ -3,4 +3,3 @@ bin/
 node_modules/
 views/
 package-lock.json
-package.json
