@@ -5,3 +5,5 @@ views/
 package-lock.json
 .DS_Store
 desktop.ini
+.vscode
+.vs
