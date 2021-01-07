@@ -33,21 +33,35 @@ router.post('/register', function (req, res) {
     });
 });
 
+//登入功能路由
+router.post('/login', function (req, res) {
+    memberModel.findOne({ account: req.body.account, password: req.body.password }, 
+        function (err, data) {
+        if (data == null) {
+            res.json({ "status": 1, "msg": "帳號密碼錯誤!" });
+        } else if (err) {
+            res.json({ "status": 1, "msg": "error" });
+        } else {
+            res.json({ "status": 0, "msg": "success", "data": data });
+        }
+    })
+});
+
 //修改密碼路由
 router.post('/changePW', function (req, res) {
-    memberModel.findOne({ account: req.body.account, password: req.body.oldpassword }, 
-        function(err, data){
-        if(data== null){
-        res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
-    } else {
-        data.password = req.body.newpassword;
-        data.save(function (err) {
-            if (err) {
-                res.json({ "status": 1, "msg": "error" });
+    memberModel.findOne({ account: req.body.account, password: req.body.oldpassword },
+        function (err, data) {
+            if (data == null) {
+                res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
             } else {
-                res.json({ "status": 0, "msg": "success!" });
+                data.password = req.body.newpassword;
+                data.save(function (err) {
+                    if (err) {
+                        res.json({ "status": 1, "msg": "error" });
+                    } else {
+                        res.json({ "status": 0, "msg": "success!" });
+                    }
+                });
             }
         });
-    }
 });
-    });
