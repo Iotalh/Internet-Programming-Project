@@ -4,19 +4,20 @@ function login() {
     var _password = $('#password').val();
     console.log("login");
     if (!_account || !_password) {
-        $('#errmsg').text('請輸入帳號密碼!');
+        $("#errmsg").removeClass("invisible");
     }
     else {
-        $.post("/memberApi/login", { 'account': _account, 'password': _password }, 
-        function (res) {
-            if (res.status == 1) {
-                $('#errmsg').text(res.msg);
-            } else {
-                $.cookie('userName', res.data.name);
-                $.cookie('userID', res.data.account);
-                alert('登入成功!');
-                location.href = '/public/index.html';
-            }
-        });
+        $.post("/memberApi/login", { 'account': _account, 'password': _password },
+            function (res) {
+                if (res.status == 1) {
+                    $("#errmsg").removeClass("invisible");
+                    $('#errmsg').text(res.msg);
+                } else {
+                    $.cookie('userName', res.data.name);
+                    $.cookie('userID', res.data.account);
+                    alert('登入成功');
+                    location.href = '/public/index.html';
+                }
+            });
     }
 }
