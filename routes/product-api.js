@@ -26,12 +26,15 @@ router.post('/createProduct', function (req, res) {
 
 // 存取所有商品
 router.get('/readProducts', function (req, res) {
-
+    productModel.find(function(err,data){
+        if(err)console.log(err);
+        res.json(data);
+    });
 });
 // 更新商品
 router.post('/updateProduct', function (req, res) {
     var id = req.body.id;
-    listModel.findById(id, function (err, data) {
+    productModel.findById(id, function (err, data) {
         if (err) {
             console.log(err);
             res.json({ "status": 1, "msg": "error" });
@@ -52,9 +55,4 @@ router.post('/updateProduct', function (req, res) {
             });
         }
     });
-});
-
-// 刪除商品
-router.post('/removeProduct', function (req, res) {
-
 });
