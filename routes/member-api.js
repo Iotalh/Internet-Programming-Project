@@ -5,13 +5,13 @@ const bcrypt = require('bcrypt');
 //這裡放置與會員相關的API程式碼
 module.exports = router;
 
-const memberModel = require('../models/memberModels');
+const memberModel = require('../models/member-models');
 //註冊功能路由
-router.post('/register', function (req, res) {
+router.post('/register', function (req, res, next) {
     // 密碼加密
     const saltRounds = 10;
     const hash = bcrypt.hashSync(req.body.password, saltRounds);
-    console.log(hash);
+    console.log("hash");
     const newMember = new memberModel({
         userRole: req.body.userRole,
         userName: req.body.userName,
@@ -34,21 +34,27 @@ router.post('/register', function (req, res) {
 });
 
 //登入功能路由
-router.post('/login', function (req, res) {
-    memberModel.findOne({ account: req.body.account, password: req.body.password }, 
+router.post('/login', function (req, res, next) {
+    memberModel.findOne({ account: req.body.account}, 
         function (err, data) {
-        if (data == null) {
-            res.json({ "status": 1, "msg": "帳號密碼錯誤!" });
-        } else if (err) {
-            res.json({ "status": 1, "msg": "error" });
-        } else {
-            res.json({ "status": 0, "msg": "success", "data": data });
-        }
-    })
+            if(data == null){
+                res.json({ "status": 1, "msg": "該賬號不存在" });
+            }else{
+                bcrypt.compare(req.body.password, data.password).then(function (check) {
+                   // console.log(check); 
+                    if(check == false){
+                        res.json({ "status": 1, "msg": "密碼錯誤" });
+                    }else{
+                        //console.log(data.userName);
+                        res.json({ "status": 0 , "msg": "success", "data": data});
+                    }
+                });
+            }
+        });
 });
 
 //修改密碼路由
-router.post('/changePW', function (req, res) {
+router.post('/changePW', function (req, res, next) {
     memberModel.findOne({ account: req.body.account, password: req.body.oldpassword },
         function (err, data) {
             if (data == null) {
