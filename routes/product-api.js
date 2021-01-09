@@ -29,7 +29,7 @@ router.get('/readProducts', function (req, res) {
 
 });
 // 更新商品
-router.get('/updateProduct', function (req, res) {
+router.post('/updateProduct', function (req, res) {
     var id = req.body.id;
     listModel.findById(id, function (err, data) {
         if (err) {
@@ -52,4 +52,9 @@ router.get('/updateProduct', function (req, res) {
             });
         }
     });
+});
+
+// 刪除商品
+router.post('/removeProduct', function (req, res) {
+
 });
