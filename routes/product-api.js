@@ -29,7 +29,7 @@ router.get('/readProducts', function (req, res) {
 
 });
 // 更新商品
-router.get('/updateProduct', function (req, res) {
+router.post('/updateProduct', function (req, res) {
 
 });
 // 刪除商品
