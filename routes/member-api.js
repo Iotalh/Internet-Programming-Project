@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 //這裡放置與會員相關的API程式碼
 module.exports = router;
 
-const memberModel = require('../models/memberModels');
+const memberModel = require('../models/member-models');
 //註冊功能路由
 router.post('/register', function (req, res) {
     // 密碼加密
