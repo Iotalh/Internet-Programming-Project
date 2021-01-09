@@ -3,7 +3,7 @@ function getList() {
     const api = "http://localhost:3000/api/readProduct";
     $.get(api, function (data, status) {
         for (var i = 0; i < data.length; i++) {
-            newList(data[i]);
+            newProduct(data[i]);
         }
     })
 }
