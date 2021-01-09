@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = router;
 
-const productModel = require('../models/product-models')y;
+const productModel = require('../models/product-models');
 
 // 新增商品
 router.post('/createProduct', function (req, res) {
