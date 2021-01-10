@@ -15,12 +15,12 @@ function login() {
         $.post(api, data, function (res) {
             if (res.status == 0) {
                 //console.log(data.userName);
-                $.cookie('userName',res.data.userName);
+                $.cookie('userName', res.data.userName);
                 location.href = '/public/product-list.html';
                 alert('登入成功!');
-            }else{
+            } else {
                 alert(res.msg);
             }
         });
-    }   
+    }
 }
