@@ -31,6 +31,14 @@ router.get('/readProducts', function (req, res) {
         res.json(data);
     });
 });
+//讀取要更新的商品資料
+router.get('/chooseProducts', function (req, res) {
+    var id = req.body.id;
+    productModel.findById(id,function(err,data){
+        if(err)console.log(err);
+        res.json(data);
+    });
+});
 // 更新商品
 router.post('/updateProduct', function (req, res) {
     var id = req.body.id;
