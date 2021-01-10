@@ -77,3 +77,7 @@ router.post('/changePW', function (req, res, next) {
             });
         });
 });
+//新增收藏路由
+router.post('/addFav', function (req, res, next) {
+
+});
