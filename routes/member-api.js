@@ -67,9 +67,9 @@ router.post('/changePW', function (req, res, next) {
                 data.password = hash;
                 data.save(function (err) {
                     if (err) {
-                        res.json({ "status": 1, "msg": "error" });
+                        res.json({ "status": 1, "msg": "更改失敗" });
                     } else {
-                        res.json({ "status": 0, "msg": "success!" });
+                        res.json({ "status": 0, "msg": "更改成功" });
                     }
                 });
             
