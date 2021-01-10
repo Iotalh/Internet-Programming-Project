@@ -34,5 +34,6 @@ function editProduct(data) {
                     location.href = '/public/product-list.html';
                 }
             });
+
     }
 }
