@@ -17,6 +17,10 @@ function login() {
                 //console.log(data.userName);
                 $.cookie('userName', res.data.userName);
                 $.cookie('userRole', res.data.userRole);
+ lee/login
+                $.cookie('userAccount',res.data.account);
+
+ main
                 location.href = '/public/product-list.html';
                 alert("登入成功!");
             } else {
