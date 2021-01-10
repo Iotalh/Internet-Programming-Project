@@ -5,13 +5,25 @@
 function fav_jude_login(){
     if($.cookie('userName') == null){
         var addFav = '<div class="modal fade show" id="addFav" tabindex="-1" aria-labelledby="addFav" style="padding-right: 16px; display: block;" aria-modal="true" role="dialog"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-body text-center text-primary">請先登入</div></div></div></div>';
-        //未登入
-        //console.log("未登入")
         $('body').append(addFav);
         setTimeout(" location.href = '/public/login.html'",500);
     }
     else{
         location.href = '/public/fav-list.html';
+    }
+}
+function favP_jude_login(){
+    if($.cookie('userName') == null){
+        var addFav = '<div class="modal fade show" id="addFav" tabindex="-1" aria-labelledby="addFav" style="padding-right: 16px; display: block;" aria-modal="true" role="dialog"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-body text-center text-primary">請先登入</div></div></div></div>';
+        $('body').append(addFav);
+        setTimeout(" location.href = '/public/login.html'",500);
+    }
+    else{
+        var addFavP = '<div class="modal fade show" id="addFav" tabindex="-1" aria-labelledby="addFav" style="padding-right: 16px; display: block;" aria-modal="true" role="dialog"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-body text-center text-primary">已加入我的收藏</div></div></div></div>';
+        $('body').append(addFavP);
+        $('#addFav').click(function(){
+            $("#addFav").remove();
+        })
     }
 }
 
@@ -36,5 +48,6 @@ $(document).ready(function(){
         $.removeCookie("userName");
         location.href = "../index.html";
    });
+
 
 });
