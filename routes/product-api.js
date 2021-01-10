@@ -26,8 +26,8 @@ router.post('/createProduct', function (req, res) {
 
 // 存取所有商品
 router.get('/readProducts', function (req, res) {
-    productModel.find(function(err,data){
-        if(err)console.log(err);
+    productModel.find(function (err, data) {
+        if (err) console.log(err);
         res.json(data);
     });
 });
@@ -48,11 +48,11 @@ router.post('/updateProduct', function (req, res) {
             res.json({ "status": 1, "msg": "error" });
         } else {
             data.productName = req.body.productName,
-            data.Img_url= req.body.Img_url,
-            data.productPrice= req.body.productPrice,
-            data.productDetail= req.body.productDetail,
-            data.tags= req.body.tags,
-            data.isDeleted= req.body.isDeleted
+                data.Img_url = req.body.Img_url,
+                data.productPrice = req.body.productPrice,
+                data.productDetail = req.body.productDetail,
+                data.tags = req.body.tags,
+                data.isDeleted = req.body.isDeleted
             data.save(function (err) {
                 if (err) {
                     console.log(err);
