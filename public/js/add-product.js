@@ -5,7 +5,7 @@ function addProduct() {
     var _price = $('#productPrice').val();
     var _tag = $('#productTag').val();
     var _detail = $('#productDetail').val();
-    var _available ;
+    var _available = ($('#productAvailable').val() == "true");
     if($('#productAvailable').val()=="上架中"){_available=true;}
     else{_available=false;}
     

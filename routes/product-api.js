@@ -28,7 +28,7 @@ router.post('/createProduct', function (req, res) {
 router.get('/readProducts', function (req, res) {
     productModel.find(function (err, data) {
         if (err) console.log(err);
-        res.json(data);
+        res.json({ "status": 0, "msg": "success", "data": data });
     });
 });
 //讀取要更新的商品資料
@@ -36,7 +36,7 @@ router.get('/chooseProduct', function (req, res) {
     var id = req.body.id;
     productModel.findById(id,function(err,data){
         if(err)console.log(err);
-        res.json(data);
+        res.json({ "status": 0, "msg": "success", "data": data });
     });
 });
 // 更新商品
