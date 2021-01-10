@@ -32,7 +32,7 @@ router.get('/readProducts', function (req, res) {
     });
 });
 //讀取要更新的商品資料
-router.get('/chooseProducts', function (req, res) {
+router.get('/chooseProduct', function (req, res) {
     var id = req.body.id;
     productModel.findById(id,function(err,data){
         if(err)console.log(err);
@@ -47,7 +47,7 @@ router.post('/updateProduct', function (req, res) {
             console.log(err);
             res.json({ "status": 1, "msg": "error" });
         } else {
-            data.productName = req.body.productName,
+                data.productName = req.body.productName,
                 data.Img_url = req.body.Img_url,
                 data.productPrice = req.body.productPrice,
                 data.productDetail = req.body.productDetail,
