@@ -4,7 +4,7 @@ readProducts();
 let _id
 
 function readProducts() {
-    const api = "http://localhost:3000/productApi/readProducts";
+    const api = "/productApi/readProducts";
     $.get(api, function (data, status) {
         for (var i = 0; i < data.length; i++) {
             newProduct(data[i]);
