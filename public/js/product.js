@@ -51,7 +51,7 @@ function newProduct(data) {
         <div class="card-link text-primary">
         <a href="edit-product.html?id=${data.id}"><i class="fas fa-pen ${data.id}"></i></a>
             <i class="fas fa-times ${data.id}" onclick="delProduct(${data.id})"></i>
-            <i class="fas fa-heart ${data.id}" data-toggle="modal" data-target="#addFav" onclick="favP_jude_login()"></i>
+            <i class="fas fa-heart ${data.id}" data-toggle="modal" data-target="#addFav"></i>
             <i class="fas fa-shopping-cart pl-1 ${data.id}" data-toggle="modal" data-target="#addCart"></i>
         </div>
     </div>
