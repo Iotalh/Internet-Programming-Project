@@ -38,7 +38,7 @@ router.post('/login', function (req, res, next) {
     memberModel.findOne({ account: req.body.account}, 
         function (err, data) {
             if(data == null){
-                res.json({ "status": 1, "msg": "該賬號不存在" });
+                res.json({ "status": 1, "msg": "該帳號不存在" });
             }else{
                 bcrypt.compare(req.body.password, data.password).then(function (check) {
                    // console.log(check); 
