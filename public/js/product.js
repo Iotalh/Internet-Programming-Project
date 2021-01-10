@@ -58,3 +58,13 @@ function updateProduct(productId) {
     const api = "http://localhost:3000/api/updateProduct";
     // TODO
 }
+isAdmin();
+function isAdmin() {
+    if ($.cookie("userRole") == "admin") {
+        const addProduct = 
+        `<li class="nav-item pr-7">
+            <a class="nav-link h5 font-weight-normal my-auto" href="add-product.html">Add Product</a>
+        </li>`;
+        $(".brands").append(addProduct);
+    }
+}
