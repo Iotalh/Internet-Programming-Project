@@ -2,7 +2,7 @@ document.write('<script src=" https://code.jquery.com/jquery-3.5.1.min.js"></scr
 
 function register() {
     console.log("register");
-    var _role = "member";
+    var _role = $('#userRole').val();
     var _name = $('#userName').val();
     var _email = $('#email').val();
     var _pw = $('#password').val();
