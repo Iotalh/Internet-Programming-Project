@@ -1,4 +1,8 @@
+
 readProducts();
+//儲存商品_id
+let _id
+
 function readProducts() {
     const api = "http://localhost:3000/productApi/readProducts";
     $.get(api, function (data, status) {
@@ -7,8 +11,10 @@ function readProducts() {
         }
     })
 }
+
 function newProduct(data) {
     let status = (data.status) ? "checked" : "";
+   _id = data._id;
     let member_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
     <div class="card">
@@ -21,7 +27,7 @@ function newProduct(data) {
             <h2 class="card-title h4 mb-0 ${data._id}">${data.productName}</h2>
             <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
             <div class="card-link text-primary">
-            <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav()"></i>
+            <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav(_id)"></i>
             <i class="fas fa-shopping-cart pl-1 ${data._id}" data-toggle="modal" data-target="#addCart"></i>
             </div>
         </div>

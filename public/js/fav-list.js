@@ -22,8 +22,9 @@ function goToFavList() {
         location.href = '/public/fav-list.html';
     }
 }
-
-function addFav() {
+//var product_id;
+function addFav(product_id) {
+    console.log(product_id);
     if (checkLoginAndAlert()) {
         const addFav_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
@@ -32,7 +33,10 @@ function addFav() {
                         <div class="modal-body text-center text-primary">已加入我的收藏</div>
                     </div>
                 </div>
-	        </div>`;
+            </div>`;
+        
+        const api="/memberApi/addFav";
+
         $('body').append(addFav_content);
         $('#addFav').click(function () {
             $("#addFav").remove();
