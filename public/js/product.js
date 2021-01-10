@@ -14,16 +14,11 @@ function newProduct(data) {
     <div class="card">
         <a href="product-info.html?id=${data._id}">
             <picture>
-                <source srcset="img/product/item-${data._id}.png, img/product/item-${data._id}@2x.png 2x"
-                    media="(mix-width: 768px)">
-                <source
-                    srcset="img/product/mobile/item-${data._id}-mobile.png, img/product/mobile/item-${data._id}-mobile@2x.png 2x"
-                    media="(max-width: 576px)">
-                <img src="img/product/item-${data._id}.png" class="card-img-top" alt="product img">
+                <img src="${data.Img_url}" class="card-img-top" alt="product img">
             </picture>
         </a>
         <div class="card-body">
-            <h2 class="card-title h4 mb-0">${data.productName}</h2>
+            <h2 class="card-title h4 mb-0 ${data._id}">${data.productName}</h2>
             <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
             <div class="card-link text-primary">
             <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="favP_jude_login()"></i>
@@ -37,16 +32,11 @@ function newProduct(data) {
 <div class="card">
     <a href="product-info.html?id=${data._id}">
         <picture>
-            <source srcset="img/product/item-${data._id}.png, img/product/item-${data._id}@2x.png 2x"
-                media="(mix-width: 768px)">
-            <source
-                srcset="img/product/mobile/item-${data._id}-mobile.png, img/product/mobile/item-${data._id}-mobile@2x.png 2x"
-                media="(max-width: 576px)">
-            <img src="img/product/item-${data._id}.png" class="card-img-top" alt="product img">
+            <img src="${data.Img_url}" class="card-img-top" alt="product img">
         </picture>
     </a>
     <div class="card-body">
-        <h2 class="card-title h4 mb-0">${data.productName}</h2>
+        <h2 class="card-title h4 mb-0 ${data._id}">${data.productName}</h2>
         <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
         <div class="card-link text-primary">
             <a href="edit-product.html?id=${data._id}"><i class="fas fa-pen ${data._id}"></i></a>
@@ -58,6 +48,9 @@ function newProduct(data) {
         $("#product-list").append(admin_content);
     } else {
         $("#product-list").append(member_content);
+    }
+    if (data.isDeleted) {
+        $(".card-title, .${data._id}").append(" 已下架").addClass("text-danger");
     }
 }
 
