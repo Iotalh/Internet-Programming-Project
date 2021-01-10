@@ -1,6 +1,4 @@
 
-//document.write('<script src=" https://code.jquery.com/jquery-3.5.1.min.js"></script>');
-//document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>');
 function login() {
     var _account = $('#email').val();
     var _password = $('#password').val();

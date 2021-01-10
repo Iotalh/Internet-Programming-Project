@@ -12,7 +12,7 @@ const memberSchema = new mongoose.Schema({
     account: String,
     password: String,
     buyItems: String,
-    favItem : String
+    favItem : Array
 });
 memberSchema.set('collection', 'Accounts');
 const model = mongoose.model('Accounts', memberSchema);
