@@ -15,13 +15,9 @@ function login() {
         $.post(api, data, function (res) {
             if (res.status == 0) {
                 //console.log(data.userName);
-<<<<<<< Updated upstream
-                $.cookie('userName',res.data.userName);
-=======
                 $.cookie('userName', res.data.userName);
                 $.cookie('userRole', res.data.userRole);
                 $.cookie('userAccount',res.data.account);
->>>>>>> Stashed changes
                 location.href = '/public/product-list.html';
                 alert('登入成功!');
             }else{
