@@ -63,6 +63,8 @@ $(document).ready(function () {
     }
     $('#logout').click(function () {
         $.removeCookie("userName");
+        $.removeCookie("userAccount");
+        $.removeCookie("userRole");
         location.href = "../index.html";
     });
 });
