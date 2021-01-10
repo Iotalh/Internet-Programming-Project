@@ -9,6 +9,7 @@ function changePW() {
         const api = "/memberApi/changePW";
         var data = {'account': $.cookie('userAccount'), 'oldpassword': _oldPW, 'newpassword':_newPW};
         $.post(api, data, function (res) {
+            console.log("ppp");
             if (res.status == 1) {
                 alert(res.msg);
             } else {
