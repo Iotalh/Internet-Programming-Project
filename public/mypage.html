@@ -31,27 +31,28 @@
 			</button>
 			<ul class="navbar-nav d-md-flex d-none flex-md-row">
 				<li class="nav-item">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="product-list.html"><i
-							class="fas fa-tshirt"></i> Product</a>
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
+						href="product-list.html"><i class="fas fa-tshirt"></i> Product</a>
 				</li>
 				<li class="nav-item">
 					<!-- 下拉式選單 -->
-					<div class = "dropdown show" id = "login">
+					<div class="dropdown show" id="login">
 						<!-- 登入狀態 -->
-						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 "  id = "login_text">
+						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 " id="login_text">
 						</a>
-
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "menu" style="margin-top: 0px;">
-							<a class="dropdown-item h5 font-weight-normal text-secondary-dark" href="mypage.html">會員中心</a>
-							<a class="dropdown-item h5 font-weight-normal text-secondary-dark" href="#" id = 'logout'>登出</a>
-						  </div>
-						
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="menu"
+							style="margin-top: 0px;">
+							<a class="dropdown-item h5 font-weight-normal text-secondary-dark"
+								href="mypage.html">會員中心</a>
+							<a class="dropdown-item h5 font-weight-normal text-secondary-dark" href="#"
+								id="logout">登出</a>
+						</div>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#" onclick = "fav_jude_login()"><i
-							class="fas fa-heart"></i>
-						Wishlist</a>
+					<h5 class="nav-link font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" onclick="goToFavList()">
+						<i class="fas fa-heart"></i> Wishlist
+					</h5>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#"><i
@@ -101,7 +102,8 @@
 		<div class="row">
 			<div class="col-lg-2" data-aos="fade-up">
 				<h2 class="h5 d-none d-lg-block text-gray-light mb-md-7">會員中心</h2>
-				<ul class="mypage-nav nav flex-lg-column justify-content-between justify-content-md-around justify-content-lg-between my-10 mt-md-0 mb-md-5 mb-lg-0">
+				<ul
+					class="mypage-nav nav flex-lg-column justify-content-between justify-content-md-around justify-content-lg-between my-10 mt-md-0 mb-md-5 mb-lg-0">
 					<li class="nav-item mb-lg-6"><a class="nav-link text-gray-light d-inline-block active disabled p-0"
 							href="#" tabindex="-1" aria-disabled="true">會員資料修改</a></li>
 					<li class="nav-item mb-lg-6"><a class="nav-link text-gray-light hover-primary d-inline-block p-0"
