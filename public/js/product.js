@@ -58,11 +58,44 @@ function updateProduct(productId) {
     const api = "http://localhost:3000/api/updateProduct";
     // TODO
 }
+
+function addProduct() {
+    console.log("addProduct");
+    var _name = $('#productName').val();
+    var _link = $('#productLink').val();
+    var _price = $('#productPrice').val();
+    var _tag = $('#productTag').val();
+    var _detail = $('#productDetail').val();
+    var _available = $('#productAvailable').val();
+    if (!_name || !_link || !_price || !_tag || !_detail || !_available) {
+        alert("請輸入未填欄位！");
+    } else {
+        var api = "/productApi/createProduct";
+        var data = {
+            'productName': _name,
+            'Img_url': _link,
+            'productPrice': _price,
+            'productDetail': _detail,
+            'tags': _tag,
+            'isDeleted': _available
+        };
+        $.post(api, data, function (res) {
+            if (res.status == 0) {
+                alert("新增成功");
+            }else{
+                alert("失敗");
+            }
+        });
+    }
+}
+
 isAdmin();
 function isAdmin() {
+    console.log("判斷管理員");
     if ($.cookie("userRole") == "admin") {
-        const addProduct = 
-        `<li class="nav-item pr-7">
+        console.log("管理員");
+        const addProduct =
+            `<li class="nav-item pr-7">
             <a class="nav-link h5 font-weight-normal my-auto" href="add-product.html">Add Product</a>
         </li>`;
         $(".brands").append(addProduct);
