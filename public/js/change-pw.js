@@ -1,19 +1,22 @@
 function changePW() {
-    var _oldPW = $('#oldPW').val();
-    var _newPW = $('#newPW').val();
-    if (!_oldPW || !_newPW) {
-        $('#errmsg').text("請輸入密碼");
+    var _oldPW = $('#oldpw').val();
+    var _newPW = $('#newpw').val();
+    var _newPW_check = $('#newpw-check').val();
+    
+    if (!_oldPW || !_newPW || !_newPW_check) {
+        alert("請輸入密碼");
     } else {
-        $.post("/member/changePW", {
-            'account': $.cookie('userID'), 'oldpassword': _oldPW, 'newpassword': _newPW
-        },
-            function (res) {
-                if (res.status == 1) {
-                    $('#errmsg').text(res.msg);
-                } else {
-                    alert("修改成功");
-                    location.href = '/public/index.html';
-                }
-            });
+        const api = "/memberApi/changePW";
+        var data = {'account': $.cookie('userAccount'), 'oldpassword': _oldPW, 'newpassword':_newPW};
+        $.post(api, data, function (res) {
+            if (res.status == 1) {
+                alert(res.msg);
+            } else {
+                $.removeCookie("userName");
+                $.removeCookie("userAccount");
+                location.href = '/public/index.html';
+                alert("修改成功");
+            }
+         });
     }
 };

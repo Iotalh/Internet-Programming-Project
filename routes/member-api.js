@@ -55,12 +55,16 @@ router.post('/login', function (req, res, next) {
 
 // 修改密碼路由
 router.post('/changePW', function (req, res, next) {
-    memberModel.findOne({ account: req.body.account, password: req.body.oldpassword },
+    memberModel.findOne({ account: req.body.account},
         function (err, data) {
-            if (data == null) {
+            bcrypt.compare(req.body.oldpassword, data.password).then(function (check) {
+                console.log(check);
+            if (check == false) {
                 res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
             } else {
-                data.password = req.body.newpassword;
+                const saltRounds = 10;
+                const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
+                data.password = hash;
                 data.save(function (err) {
                     if (err) {
                         res.json({ "status": 1, "msg": "error" });
@@ -68,6 +72,8 @@ router.post('/changePW', function (req, res, next) {
                         res.json({ "status": 0, "msg": "success!" });
                     }
                 });
+            
             }
+            });
         });
 });
