@@ -26,7 +26,7 @@ function newProduct(data) {
             <h2 class="card-title h4 mb-0">${data.productName}</h2>
             <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
             <div class="card-link text-primary">
-            <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav"></i>
+            <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="favP_jude_login()"></i>
             <i class="fas fa-shopping-cart pl-1 ${data._id}" data-toggle="modal" data-target="#addCart"></i>
             </div>
         </div>
