@@ -4,12 +4,12 @@
 function login() {
     var _account = $('#email').val();
     var _password = $('#password').val();
-    console.log("123");
+    console.log("onclick");
     if (!_account || !_password) {
         $("#errmsg").removeClass("invisible");
     }
     else {
-        console.log("555");
+        console.log("開始驗證");
         const api = "/memberApi/login";
         var data = { 'account': _account, 'password': _password };
         $.post(api, data, function (res) {
@@ -17,12 +17,15 @@ function login() {
                 //console.log(data.userName);
                 $.cookie('userName', res.data.userName);
                 $.cookie('userRole', res.data.userRole);
+ lee/login
                 $.cookie('userAccount',res.data.account);
+
+ main
                 location.href = '/public/product-list.html';
-                alert('登入成功!');
-            }else{
+                alert("登入成功!");
+            } else {
                 alert(res.msg);
             }
         });
-    }   
+    }
 }

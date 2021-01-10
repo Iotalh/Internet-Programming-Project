@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 
-//這裡放置與會員相關的API程式碼
+// 這裡放置與會員相關的API程式碼
 module.exports = router;
 
 const memberModel = require('../models/member-models');
-//註冊功能路由
+// 註冊功能路由
 router.post('/register', function (req, res, next) {
     // 密碼加密
     const saltRounds = 10;
@@ -33,34 +33,38 @@ router.post('/register', function (req, res, next) {
     });
 });
 
-//登入功能路由
+// 登入功能路由
 router.post('/login', function (req, res, next) {
-    memberModel.findOne({ account: req.body.account}, 
+    memberModel.findOne({ account: req.body.account },
         function (err, data) {
-            if(data == null){
-                res.json({ "status": 1, "msg": "該賬號不存在" });
-            }else{
+            if (data == null) {
+                res.json({ "status": 1, "msg": "該帳號不存在" });
+            } else {
                 bcrypt.compare(req.body.password, data.password).then(function (check) {
-                   // console.log(check); 
-                    if(check == false){
+                    // console.log(check); 
+                    if (check == false) {
                         res.json({ "status": 1, "msg": "密碼錯誤" });
-                    }else{
+                    } else {
                         //console.log(data.userName);
-                        res.json({ "status": 0 , "msg": "success", "data": data});
+                        res.json({ "status": 0, "msg": "success", "data": data });
                     }
                 });
             }
         });
 });
 
-//修改密碼路由
+// 修改密碼路由
 router.post('/changePW', function (req, res, next) {
-    memberModel.findOne({ account: req.body.account, password: req.body.oldpassword },
+    memberModel.findOne({ account: req.body.account},
         function (err, data) {
-            if (data == null) {
+            bcrypt.compare(req.body.oldpassword, data.password).then(function (check) {
+                console.log(check);
+            if (check == false) {
                 res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
             } else {
-                data.password = req.body.newpassword;
+                const saltRounds = 10;
+                const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
+                data.password = hash;
                 data.save(function (err) {
                     if (err) {
                         res.json({ "status": 1, "msg": "error" });
@@ -68,6 +72,8 @@ router.post('/changePW', function (req, res, next) {
                         res.json({ "status": 0, "msg": "success!" });
                     }
                 });
+            
             }
+            });
         });
 });
