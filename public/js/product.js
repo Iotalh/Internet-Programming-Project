@@ -17,19 +17,18 @@ function newProduct(data) {
     // _id = data._id;
     let member_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
-            <div class="card">
-                <a href="product-info.html?id=${data._id}">
-                    <picture>
-                        <img src="${data.Img_url}" class="card-img-top" alt="product img">
-                    </picture>
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title h4 mb-0 ${data._id}" id="${data._id}-title">${data.productName}</h2>
-                    <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
-                    <div class="card-link text-primary">
-                        <i class="fas fa-heart ${data._id} text-primary" data-toggle="modal" data-target="#addFav" onclick="addFav(_id)"></i>
-                    </div>
-                </div>
+
+    <div class="card">
+        <a href="product-info.html?id=${data._id}">
+            <picture>
+                <img src="${data.Img_url}" class="card-img-top" alt="product img">
+            </picture>
+        </a>
+        <div class="card-body">
+            <h2 class="card-title h4 mb-0 ${data._id}" id="${data._id}-title">${data.productName}</h2>
+            <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
+            <div class="card-link text-primary">
+            <i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav"  onclick="addFav('${data._id}')"></i>
             </div>
         </li>`;
     let admin_content =
