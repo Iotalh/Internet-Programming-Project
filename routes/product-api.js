@@ -28,7 +28,8 @@ router.post('/createProduct', function (req, res) {
 router.get('/readProducts', function (req, res) {
     productModel.find(function (err, data) {
         if (err) console.log(err);
-        res.json({ "status": 0, "msg": "success", "data": data });
+        console.log(data);
+        res.send(data);
     });
 });
 //讀取要更新的商品資料
