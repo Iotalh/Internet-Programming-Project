@@ -11,32 +11,36 @@ function getProduct(_id) {
         $('#productPrice').val(data.productPrice);
         $('#productDetail').val(data.productDetail);
         $('#productTag').val(data.tags);
-        $('#productAvailable').val((data.isDeleted? "true":"false"));
+        $('#productAvailable').val((data.isDeleted ? "true" : "false"));
     });
-    editProduct();
+    
 }
-
 function editProduct() {
-    const _productName = $('#productName').val();
-    const _Img_url = $('#productLink').val();
-    const _productPrice = $('#productPrice').val();
-    const _productDetail = $('#productDetail').val();
-    const _tags = $('#productTag').val();
-    const _isDeleted = ($('#productAvailable').val() == "true");
 
-    if (!_productName || !_Img_url || !_productPrice || !_productDetail) {
+    var _productName = $('#productName').val();
+    var _Img_url = $('#productLink').val();
+    var _productPrice = $('#productPrice').val();
+    var _productDetail = $('#productDetail').val();
+    var _tags = $('#productTag').val();
+    var _isDeleted = ($('#productAvailable').val() == "true");
+
+    if (!_productName || !_Img_url || !_productDetail) {
+        console.log("_productName: " + _productName);
+        console.log("_Img_url: " + _Img_url);
+        console.log("_productDetail: " + _productDetail);
         $('#errmsg').text("商品資訊不能留空，請填寫完畢!");
     } else {
-        const update = {
+        const payload = {
             '_id': _id,
-            'productName': _name,
-            'Img_url': _link,
-            'productPrice': _price,
-            'productDetail': _detail,
-            'tags': _tag,
-            'isDeleted': _available
+            'productName': _productName,
+            'Img_url': _Img_url,
+            'productPrice': _productPrice,
+            'productDetail': _productDetail,
+            'tags': _tags,
+            'isDeleted': _isDeleted
         };
-        $.post("/productApi/updateProduct", update, function (res) {
+        let requestUrl = "/productApi/updateProduct";
+        $.post(requestUrl, payload, function (res) {
             if (res.status == 1) {
                 $('errmsg').text(res.msg);
             } else {
@@ -47,3 +51,18 @@ function editProduct() {
 
     }
 }
+$(document).ready(function () {
+
+    var $inputCheck = $(".form-control");
+
+    $inputCheck.focusout(function () {
+        if ($(this).val() != "") {
+            $(this).removeClass("is-invalid");
+            $(this).addClass("is-valid");
+        } else {
+            $(this).addClass("is-invalid");
+            $(this).removeClass("is-valid");
+        }
+    });
+
+});

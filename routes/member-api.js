@@ -105,7 +105,7 @@ router.post('/addFav', function (req, res, next) {
     });
 });
 
-router.post('/findfav', function (req, res, next) {
+router.post('/findFav', function (req, res, next) {
     memberModel.findOne({account:req.body.account},function(err, data){
         if(data == null){
             res.json({ "status": 0, "msg": "失敗" });
