@@ -1,17 +1,12 @@
 $(document).ready(function () {
     if ($.cookie('userName') == null || !($.cookie('userName'))) {
         //尚未登入
-        document.getElementById("loginText").innerHTML = '<i class="fas fa-user-alt"></i> Log in';
-
-
-        $('#loginText').attr('href', 'login.html');
-
-
-
     }
     else {
         //已登入
-        document.getElementById("loginText").innerHTML = '<i class="fas fa-user-alt"></i> ' + $.cookie('userName');
+        $("#login-item").removeClass("d-none");
+        $("#not-login").addClass("d-none");
+        document.getElementById("login-text").innerHTML = '<i class="fas fa-user-alt"></i> ' + $.cookie('userName');
         const dropdown = 
         `<div class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item h5 font-weight-normal text-secondary-dark"
