@@ -28,27 +28,30 @@ router.post('/createProduct', function (req, res) {
 router.get('/readProducts', function (req, res) {
     productModel.find(function (err, data) {
         if (err) console.log(err);
-        console.log(data);
+        // console.log(data);
         res.send(data);
     });
 });
 //讀取要更新的商品資料
 router.get('/chooseProduct', function (req, res) {
-    var id = req.body.id;
-    productModel.findById(id,function(err,data){
-        if(err)console.log(err);
+    const id = new productModel.Products.ObjectID(req.query.id);
+    console.log("choose id: " + id);
+    productModel.find({"_id": id}, function (err, data) {
+        if (err) console.log(err);
+        console.log(data);
         res.send(data);
     });
 });
 // 更新商品
 router.post('/updateProduct', function (req, res) {
-    var id = req.body.id;
-    productModel.findById(id, function (err, data) {
+    const id = new productModel.Products.ObjectID(req.query.id);
+    console.log("upadte id: " + id);
+    productModel.find({"_id": ObjectId(id)}, function (err, data) {
         if (err) {
             console.log(err);
             res.json({ "status": 1, "msg": "error" });
         } else {
-                data.productName = req.body.productName,
+            data.productName = req.body.productName,
                 data.Img_url = req.body.Img_url,
                 data.productPrice = req.body.productPrice,
                 data.productDetail = req.body.productDetail,
