@@ -34,12 +34,16 @@
 					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
 						href="product-list.html"><i class="fas fa-tshirt"></i> Product</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item" id="not-login">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
+						href="login.html"><i class="fas fa-user-alt"></i> Log in</a>
+				</li>
+				<li class="nav-item d-none" id="login-item">
 					<!-- 下拉式選單 -->
 					<div id="login">
 						<!-- 登入狀態 -->
 						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 dropdown-toggle"
-							type="button" id="loginText" data-toggle="dropdown" aria-haspopup="true"
+							type="button" id="login-text" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="true"></a>
 					</div>
 				</li>
@@ -82,10 +86,7 @@
 			<nav class="navbar navbar-dark col-12 p-0">
 				<ul class="navbar-nav flex-row">
 					<li class="nav-item pr-7">
-						<a class="nav-link h5 font-weight-normal my-auto" href="#">All Products</a>
-					</li>
-					<li class="nav-item pr-7">
-						<a class="nav-link h5 font-weight-normal my-auto" href="#">My Products</a>
+						<a class="nav-link h5 font-weight-normal my-auto" href="product-list.html">Products</a>
 					</li>
 				</ul>
 			</nav>
