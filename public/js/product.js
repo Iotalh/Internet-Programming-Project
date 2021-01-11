@@ -4,7 +4,7 @@ readProducts();
 let _id
 
 function readProducts() {
-    const api = "http://localhost:3000/api/readProducts";
+    const api = "/productApi/readProducts";
     $.get(api, function (data, status) {
         for (var i = 0; i < data.length; i++) {
             newProduct(data[i]);
@@ -57,41 +57,6 @@ function newProduct(data) {
     }
     if (data.isDeleted) {
         $(".card-title, .${data._id}").append(" 已下架").addClass("text-danger");
-    }
-}
-
-function updateProduct(productId) {
-    const api = "http://localhost:3000/api/updateProduct";
-    // TODO
-}
-
-function addProduct() {
-    console.log("addProduct");
-    var _name = $('#productName').val();
-    var _link = $('#productLink').val();
-    var _price = $('#productPrice').val();
-    var _tag = $('#productTag').val();
-    var _detail = $('#productDetail').val();
-    var _available = $('#productAvailable').val();
-    if (!_name || !_link || !_price || !_tag || !_detail || !_available) {
-        alert("請輸入未填欄位！");
-    } else {
-        var api = "/productApi/createProduct";
-        var data = {
-            'productName': _name,
-            'Img_url': _link,
-            'productPrice': _price,
-            'productDetail': _detail,
-            'tags': _tag,
-            'isDeleted': _available
-        };
-        $.post(api, data, function (res) {
-            if (res.status == 0) {
-                alert("新增成功");
-            }else{
-                alert("失敗");
-            }
-        });
     }
 }
 

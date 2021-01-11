@@ -76,3 +76,19 @@ router.post('/changePW', function (req, res, next) {
             });
         });
 });
+//新增收藏路由
+router.post('/addFav', function (req, res, next) {
+    memberModel.findOne({account:req.body.account},function(err, data){
+        if (data == null) {
+            res.json({ "status": 1, "msg": "該帳號不存在" });
+        }else{
+            memberModel.updateOne({ account : req.body.account },{ $push: { favItem:  req.body.id}},function(err, data){
+                if(err){
+                    res.json({ "status": 1, "msg": "fail" });
+                }else{
+                    res.json({ "status": 0, "msg": "success" });
+                }
+            });
+        }
+    });
+});

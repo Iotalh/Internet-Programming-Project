@@ -35,9 +35,13 @@
                         href="product-list.html"><i class="fas fa-tshirt"></i> Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="login.html"><i
-                            class="fas fa-user-alt"></i>
-                        log in </a>
+					<!-- 下拉式選單 -->
+					<div id="login">
+						<!-- 登入狀態 -->
+						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 dropdown-toggle"
+							type="button" id="loginText" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="true"></a>
+					</div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="fav-list.html"><i
@@ -116,9 +120,9 @@
                             class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">商品標籤</label>
                         <div class="col-3 col-md-2">
                             <select id="productTag" class="form-control">
-                                <option selected>中性</option>
-                                <option>男用</option>
-                                <option>女用</option>
+                                <option value="中性" selected>中性</option>
+                                <option value="男用">男用</option>
+                                <option value="女用">女用</option>
                             </select>
                         </div>
                     </div>
@@ -134,8 +138,8 @@
                             class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">上架狀態</label>
                         <div class="col-3 col-md-2">
                             <select id="productAvailable" class="form-control">
-                                <option selected>上架中</option>
-                                <option>下架</option>
+                                <option value="false" selected>上架中</option>
+                                <option value="true">下架</option>
                             </select>
                         </div>
                     </div>
@@ -209,8 +213,11 @@
 	<!-- product.js -->
     <script src="./js/add-product.js"></script>
     <script src="./js/jud_log.js"></script>
+
     <!-- fav-list.js -->
 	<script src="./js/fav-list.js"></script>
+
+
 </body>
 
 </html>
