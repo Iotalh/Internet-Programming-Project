@@ -15,11 +15,19 @@ function register() {
         var api = "/memberApi/register";
         var data = { 'userRole': _role, 'userName': _name, 'account': _email, 'password': _pw };
         $.post(api, data, function (res) {
+            const show_content =
+                `<div class="modal fade show pr-4 d-block" id="show" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+                   <div class="modal-dialog modal-dialog-centered">
+                       <div class="modal-content">
+                           <div class="modal-body text-center text-primary">${res.msg}</div>
+                       </div>
+                   </div>
+               </div>`; 
+            $('body').append(show_content);
             if (res.status == 0) {
-                location.href = '/public/login.html';
-                alert('註冊成功!');
+               setTimeout("location.href = '/public/login.html'", 800);
             } else {
-                alert('此帳號已被註冊!');
+                setTimeout("location.href = 'signup.html'", 800);
             }
         });
     }
