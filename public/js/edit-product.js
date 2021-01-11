@@ -7,15 +7,15 @@ getProduct();
 function getProduct() {
     const choose = "/productApi/chooseProduct";
     const pickId = { '_id': _id };
-    $.get(choose, function (pickId, status) {
-        editProduct(pickId);
+    $.get(choose, pickId, function (data, status) {
+        $('#productName').val(data.productName);
+        $('#productLink').val(data.Img_url);
+        $('#productPrice').val(data.productPrice);
+        $('#productDetail').val(data.productDetail);
+        $('#productTag').val(data.tags);
+        $('#productAvailable').val(data.isDeleted);
     });
-    $('#productName').val(pickId.productName);
-    $('#productLink').val(pickId.Img_url);
-    $('#productPrice').val(pickId.productPrice);
-    $('#productDetail').val(pickId.productDetail);
-    $('#productTag').val(pickId.tags);
-    $('#productAvailable').val(pickId.isDeleted);
+
 }
 
 function editProduct() {
