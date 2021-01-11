@@ -3,7 +3,17 @@ function getfav() {
     const api = "/memberApi/findfav";
     var data = {'account':$.cookie('userAccount')};
     $.post(api , data, function (res) {
-        if(res.data.length == 0) console.log("沒有收藏");
+        console.log(res.data.length);
+        if(res.data.length == 0){
+            const noFav_content =
+            `<div class="modal-dialog modal-dialog-centered">
+                <div>
+                    <div class="modal-body text-center text-primary">現在沒有收藏喔!</div>
+                </div>
+            </div>`;
+
+            $('#wish-list').append(noFav_content);
+        } 
         else{
             for(var i = 0;i < res.data.length;i++){
                 showWishlist(res.data[i]);
@@ -32,8 +42,7 @@ function showWishlist(_id){
                         <h2 class="card-title h4 mb-0 ${res.data._id}" id="${res.data._id}-title">${res.data.productName}</h2>
                         <p class="card-text font-weight-light mb-1">NT$${res.data.productPrice}</p>
                         <div class="card-link text-primary">
-                            <i class="fas fa-times-circle" data-toggle="modal" data-target="#delFav"></i>
-                            <i class="fas fa-heart d-none" data-toggle="modal" data-target="#addFav"></i>
+                            <i class="fas fa-times-circle" data-toggle="modal" data-target="#delFav" onclick="delFav('${res.data._id}')"></i>
                         </div>
                     </div>
                 </div>
@@ -43,4 +52,23 @@ function showWishlist(_id){
         }
     
     });
+}
+
+function delFav(_id){
+    console.log(_id);
+    const api = "/memberApi/delFav";
+    var data = {'account':$.cookie('userAccount'),'id':_id};
+    $.post(api , data, function (res) {
+        const delFav_content =
+        `<div class="modal fade show pr-4 d-block" id="delFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center text-primary">${res.msg}</div>
+                </div>
+            </div>
+        </div>`;
+        $('body').append(delFav_content);
+        setTimeout("location.href = 'fav-list.html'", 800);
+    });
+
 }
