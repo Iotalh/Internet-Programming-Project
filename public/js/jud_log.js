@@ -1,9 +1,21 @@
-//判斷是否登入，每個html皆需引入
+
+
+
+
+
+
 $(document).ready(function () {
-    if ($.cookie('userName') == null) {
+    if ($.cookie('userName') == null || !($.cookie('userName'))) {
         //尚未登入
         document.getElementById("loginText").innerHTML = '<i class="fas fa-user-alt"></i> Log in';
+
+       // $('#loginText').attr('href', '../login.html');
+       $('#loginText').click(function(){
+            location.href = "../login.html";
+       });
+
         $('#loginText').attr('href', 'login.html');
+
     }
     else {
         //已登入

@@ -17,7 +17,7 @@ function changePW() {
                 $.removeCookie("userAccount");
                 $.removeCookie("userRole");
                 location.href = '/public/index.html';
-                alert("修改成功");
+                alert(res.msg);
             }
          });
     }
