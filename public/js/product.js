@@ -1,7 +1,7 @@
 
 readProducts();
 //儲存商品_id
-let _id
+// let _id
 
 function readProducts() {
     const api = "/productApi/readProducts";
@@ -14,7 +14,7 @@ function readProducts() {
 
 function newProduct(data) {
     let status = (data.status) ? "checked" : "";
-    _id = data._id;
+    // _id = data._id;
     let member_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
     <div class="card">
