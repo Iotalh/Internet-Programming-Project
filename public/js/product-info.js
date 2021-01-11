@@ -11,6 +11,13 @@ $(document).ready(function(){
         $.post(api , data, function (res) {
             console.log(res.data.productName);
             $("#productName").text(res.data.productName);
+            $('#productDetail').text(res.data.productDetail);
+            $('#productPrice').text('NT$' + res.data.productPrice);
+            if($.cookie('userRole') == "admin"){
+                let edit=
+                `<a href="../edit-product.html?${_id}"><i class="fas fa-pen text-primary"></i></a>`;
+                $('#FavAndEdit').append(edit);
+            }
         });
     }
 })
