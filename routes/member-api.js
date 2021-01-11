@@ -24,9 +24,9 @@ router.post('/register', function (req, res, next) {
         } else {
             newMember.save(function (err, data) {
                 if (err) {
-                    res.json({ "status": 1, "msg": "error" });
+                    res.json({ "status": 1, "msg": "註冊失敗" });
                 } else {
-                    res.json({ "status": 0, "msg": "success", "data": data });
+                    res.json({ "status": 0, "msg": "註冊成功", "data": data });
                 }
             });
         }
@@ -46,7 +46,7 @@ router.post('/login', function (req, res, next) {
                         res.json({ "status": 1, "msg": "密碼錯誤" });
                     } else {
                         //console.log(data.userName);
-                        res.json({ "status": 0, "msg": "success", "data": data });
+                        res.json({ "status": 0, "msg": "登入成功", "data": data });
                     }
                 });
             }
