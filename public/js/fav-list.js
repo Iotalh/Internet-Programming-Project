@@ -50,8 +50,8 @@ function addFav(_id) {
                     </div>
                 </div>
             </div>`;
+            
          $('body').append(addFav_content);
          setTimeout("$('#addFav').remove()", 800);
-
     }
 }

@@ -68,3 +68,15 @@ router.post('/updateProduct', function (req, res) {
         }
     });
 });
+
+router.post('/showWishlist', function (req, res) {
+    productModel.findOne({"_id": req.body.id}, function (err, data) {
+        if(data == null){
+            res.json({ "status": 1, "msg": "null" });
+        }else{
+            console.log(data);
+            res.json({ "status": 0, "msg": "success","data":data });
+        }
+    });
+});
+
