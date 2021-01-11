@@ -55,3 +55,9 @@ function addFav(_id) {
          setTimeout("$('#addFav').remove()", 800);
     }
 }
+function addFav_info(){
+    const Url = location.href.split('?');
+    const _id = Url[1].split('=');
+    console.log(_id[1]);
+    addFav(_id[1]);
+}
