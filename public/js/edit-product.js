@@ -41,11 +41,21 @@ function editProduct() {
         };
         let requestUrl = "/productApi/updateProduct";
         $.post(requestUrl, payload, function (res) {
+            const addFav_content =
+            `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+               <div class="modal-dialog modal-dialog-centered">
+                   <div class="modal-content">
+                       <div class="modal-body text-center text-primary">${res.msg}</div>
+                   </div>
+               </div>
+           </div>`;
+           
+           $('body').append(addFav_content);
+
             if (res.status == 1) {
                 $('errmsg').text(res.msg);
             } else {
-                alert("修改成功");
-                location.href = '/public/product-list.html';
+                setTimeout("location.href = '/public/product-list.html'", 800);
             }
         });
 

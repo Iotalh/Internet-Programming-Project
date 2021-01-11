@@ -10,7 +10,16 @@ function addProduct() {
     else{_available=false;}
     
     if (!_name || !_link || !_price || !_tag || !_detail) {
-        alert("請輸入未填欄位！");
+        const show_content =
+        `<div class="modal fade show pr-4 d-block" id="show" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+           <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                   <div class="modal-body text-center text-primary">請輸入未填欄位！</div>
+               </div>
+           </div>
+       </div>`; 
+        $('body').append(show_content);
+        setTimeout("location.href = 'add-product.html'", 800);
     } else {
         var api = "/productApi/createProduct";
         var data = {
@@ -22,10 +31,19 @@ function addProduct() {
             'isDeleted': _available
         };
         $.post(api, data, function (res) {
+            const show_content =
+                `<div class="modal fade show pr-4 d-block" id="show" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center text-primary">${res.msg}</div>
+                    </div>
+                </div>
+            </div>`; 
+             $('body').append(show_content);
             if (res.status == 0) {
-                alert("新增成功");
+                setTimeout("location.href = 'add-product.html'", 800);
             }else{
-                alert("失敗");
+                setTimeout("location.href = 'add-product.html'", 800);
             }
         });
     }

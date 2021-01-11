@@ -17,9 +17,9 @@ router.post('/createProduct', function (req, res) {
     })
     newProduct.save(function (err, data) {
         if (err) {
-            res.json({ "status": 1, "msg": "error" });
+            res.json({ "status": 1, "msg": "新增商品失敗" });
         } else {
-            res.json({ "status": 0, "msg": "success", "data": data });
+            res.json({ "status": 0, "msg": "新增商品成功", "data": data });
         }
     });
 });
@@ -52,7 +52,7 @@ router.post('/updateProduct', function (req, res) {
     productModel.findOne(query, function (err, data) {
         if (err) {
             console.log(err);
-            res.json({ "status": 1, "msg": "error" });
+            res.json({ "status": 1, "msg": "修改商品失敗" });
         } else {
             data.productName = req.body.productName;
             data.Img_url = req.body.Img_url;
@@ -63,7 +63,7 @@ router.post('/updateProduct', function (req, res) {
             data.save(function (err) {
                 if (err) {
                     console.log(err);
-                    res.json({ "status": 1, "msg": "error" });
+                    res.json({ "status": 1, "msg": "修改商品失敗" });
                 } else {
                     res.json({ "status": 0, "msg": "修改商品成功" });
                 }
