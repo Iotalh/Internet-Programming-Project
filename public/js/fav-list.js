@@ -9,7 +9,7 @@ function checkLoginAndAlert() {
                 </div>
             </div>`;
         $('body').append(login_content);
-        setTimeout(" location.href = '/public/login.html'", 500);
+        setTimeout(" location.href = '/public/login.html'", 800);
         return false;
     }
     else {
