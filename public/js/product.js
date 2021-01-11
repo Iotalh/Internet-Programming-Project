@@ -54,7 +54,7 @@ function newProduct(data) {
     if (data.isDeleted) {
         $("#" + data._id + "-title").append(" 已下架");
         $("#" + data._id + "-title").addClass("text-danger");
-    } else if (!data.isDeleted) {
+    } else if (!data.isDeleted && $.cookie('userRole') != "admin") {
         $("#product-list").append(member_content);
     }
 
