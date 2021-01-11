@@ -28,7 +28,12 @@ function newProduct(data) {
             <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
             <div class="card-link text-primary">
 
+<<<<<<< Updated upstream
             <a href="#id=${data._id}"><i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav()"></i></a>
+=======
+            <a href="#id=${data._id}"><i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav('${data._id}')"></i></a>
+
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
