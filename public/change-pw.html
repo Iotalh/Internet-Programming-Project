@@ -13,7 +13,7 @@
 		crossorigin="anonymous" />
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<title>d’Perfume</title>
-	
+
 </head>
 
 <body>
@@ -32,12 +32,12 @@
 			</button>
 			<ul class="navbar-nav d-md-flex d-none flex-md-row">
 				<li class="nav-item">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="product-list.html"><i
-							class="fas fa-tshirt"></i> Product</a>
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
+						href="product-list.html"><i class="fas fa-tshirt"></i> Product</a>
 				</li>
 				<li class="nav-item" id="not-login">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
-						href="login.html"><i class="fas fa-user-alt"></i> Log in</a>
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="login.html"><i
+							class="fas fa-user-alt"></i> Log in</a>
 				</li>
 				<li class="nav-item d-none" id="login-item">
 					<!-- 下拉式選單 -->
@@ -53,11 +53,6 @@
 							class="fas fa-heart"></i>
 						Wishlist</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#"><i
-							class="fas fa-shopping-cart"></i>
-						Cart(3)</a>
-				</li>
 			</ul>
 		</div>
 		<!-- mobile navbar -->
@@ -68,12 +63,6 @@
 				</li>
 				<li class="nav-item border-top border-light">
 					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="fav-list.html">Wishlist</a>
-				</li>
-				<li class="nav-item border-top border-light">
-					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="#">Blog</a>
-				</li>
-				<li class="nav-item border-top border-light">
-					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="#">Contact</a>
 				</li>
 				<li class="nav-item border-top border-light">
 					<a class="nav-link h5 font-weight-normal text-light py-3 mb-0" href="login.html">log in</a>
@@ -109,34 +98,34 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-4" data-aos="fade">
 				<h2 class="font-weight-bold mb-3">Change Password</h2>
-				
-					<div class="form-group mb-5">
-						<label for="email">帳號</label>
-						<input type="email" class="form-control" id="email" placeholder="email@example.com">
+
+				<div class="form-group mb-5">
+					<label for="email">帳號</label>
+					<input type="email" class="form-control" id="email" placeholder="email@example.com">
+				</div>
+				<div class="form-group mb-5">
+					<label for="password">舊舊密碼</label>
+					<input type="password" class="form-control" id="password" placeholder="Password">
+				</div>
+				<div class="form-group mb-5">
+					<label for="password">新的密碼</label>
+					<input type="password" class="form-control" id="password" placeholder="Password">
+				</div>
+
+				<div class="d-flex align-items-center justify-content-between">
+
+					<div class="d-flex justify-content-end">
+						<button type="button" class="btn btn-primary" onclick="changePW()">確定</button>
+						<button type="reset" class="btn btn-border-primary ml-2">清空</button>
 					</div>
-					<div class="form-group mb-5">
-						<label for="password">舊舊密碼</label>
-						<input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group mb-5">
-						<label for="password">新的密碼</label>
-						<input type="password" class="form-control" id="password" placeholder="Password">
-					</div>
-					
-					<div class="d-flex align-items-center justify-content-between">
-						
-						<div class="d-flex justify-content-end">
-							<button type = "button" class="btn btn-primary" onclick="changePW()">確定</button>
-							<button type="reset" class="btn btn-border-primary ml-2">清空</button>
-						</div>
-					</div>
-					<div id="errmsg" class="col-sm text-danger"></div>
-					<!-- <form action=""></form> -->
+				</div>
+				<div id="errmsg" class="col-sm text-danger"></div>
+				<!-- <form action=""></form> -->
 			</div>
 		</div>
 	</div>
 	<!-- footer -->
-	<footer class="container-fluid bg-primary px-0 py-4">
+	<footer class="container-fluid bg-primary px-0 py-4 fixed-bottom">
 		<div class="container d-flex justify-content-between align-items-center">
 			<a class="navbar-brand align-middle" href="index.html">
 				<img src="img/d’Perfumew.png" srcset="img/d’Perfumew.png 1x, img/d’Perfumew@2x.png 2x">

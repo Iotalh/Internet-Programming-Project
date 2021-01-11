@@ -11,7 +11,6 @@ const memberSchema = new mongoose.Schema({
     userName: String,
     account: String,
     password: String,
-    buyItems: String,
     favItem : Array
 });
 memberSchema.set('collection', 'Accounts');

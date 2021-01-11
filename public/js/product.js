@@ -11,7 +11,6 @@ function readProducts() {
 }
 
 function newProduct(data) {
-    let status = (data.status) ? "checked" : "";
     let member_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
         <div class="card">
@@ -47,18 +46,16 @@ function newProduct(data) {
             </div>
         </li>`;
         
-        if (sessionStorage.getItem('userRole') == "admin") {
-            $("#product-list").append(admin_content);
-        } else {
-            $("#product-list").append(member_content);
-        }
-        if (data.isDeleted) {
-            $("#" + data._id + "-title").append(" 已下架");
-            $("#" + data._id + "-title").addClass("text-danger");
-        } 
-        else if (!data.isDeleted &&sessionStorage.getItem('userRole') != "admin") {
-            $("#product-list").append(member_content);
-        }
+    if (sessionStorage.getItem('userRole') == "admin") {
+        $("#product-list").append(admin_content);
+    }
+    if (data.isDeleted) {
+        $("#" + data._id + "-title").append(" 已下架");
+        $("#" + data._id + "-title").addClass("text-danger");
+    }else if(!data.isDeleted && sessionStorage.getItem('userRole') != "admin"){
+        $("#product-list").append(member_content);
+
+    }
 }
 
 isAdmin();
