@@ -71,7 +71,7 @@ router.post('/updateProduct', function (req, res) {
         }
     });
 });
-
+//顯示收藏路由
 router.post('/showWishlist', function (req, res) {
     productModel.findOne({"_id": req.body.id}, function (err, data) {
         if(data == null){
