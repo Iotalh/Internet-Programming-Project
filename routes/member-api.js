@@ -67,10 +67,8 @@ router.post('/changePW', function (req, res, next) {
                     const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
                     memberModel.updateOne({ account : req.body.account },{$set:{password:hash}},function(err, data){
                         if(err){
-                            console.log("更改失敗");
                             res.json({ "status": 1, "msg": "更改失敗" });
                         }else{
-                            console.log("更改成功");
                             res.json({ "status": 0, "msg": "更改成功" });
                         }
                     });
@@ -82,16 +80,49 @@ router.post('/changePW', function (req, res, next) {
 //新增收藏路由
 router.post('/addFav', function (req, res, next) {
     memberModel.findOne({account:req.body.account},function(err, data){
+        console.log(req.body.id);
         if (data == null) {
             res.json({ "status": 1, "msg": "該帳號不存在" });
         }else{
-            memberModel.updateOne({ account : req.body.account },{ $push: { favItem:  req.body.id}},function(err, data){
-                if(err){
-                    res.json({ "status": 1, "msg": "fail" });
-                }else{
-                    res.json({ "status": 0, "msg": "success" });
+            //是否已收藏過
+            memberModel.findOne({account:req.body.account,favItem:req.body.id},function(err, data1){
+                console.log(data1);
+                if(data1 == null){
+                    //新增收藏
+                    memberModel.updateOne({ account : req.body.account },{ $push: { favItem: req.body.id}},function(err, data){
+                        if(err){
+                            res.json({ "status": 1, "msg": "收藏失敗" });
+                        }else{
+                            res.json({ "status": 0, "msg": "收藏成功" });
+                        }
+                    });
+                }
+                else{
+                    res.json({ "status": 1, "msg": "商品已在收藏中" });
                 }
             });
         }
     });
+});
+
+router.post('/findFav', function (req, res, next) {
+    memberModel.findOne({account:req.body.account},function(err, data){
+        if(data == null){
+            res.json({ "status": 0, "msg": "失敗" });
+        }
+        else{
+            res.json({ "status": 1, "msg": "成功","data":data.favItem });
+        }
+    });
+});
+
+router.post('/delFav', function (req, res, next) {
+    memberModel.updateOne( { account : req.body.account },{ $pull: { favItem: req.body.id } },function(err){
+        if(err){
+            res.json({ "status": 1, "msg": "移除失敗" });
+        }else{
+            res.json({ "status": 0, "msg": "移除成功" });
+        }
+    });
+
 });

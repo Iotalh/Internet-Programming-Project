@@ -11,6 +11,7 @@ $(document).ready(function(){
             $('#productDetail').text(res.data.productDetail);
             $('#productPrice').text('NT$' + res.data.productPrice);
             if(sessionStorage.getItem('userRole')== "admin"){
+
                 let edit=
                 `<a href="../edit-product.html?${_id}"><i class="fas fa-pen text-primary"></i></a>`;
                 $('#FavAndEdit').append(edit);
@@ -19,6 +20,7 @@ $(document).ready(function(){
                 let addFav=
                 `<i class="fas fa-heart text-primary" onclick="addFav_info()"></i>`;
                 $('#FavAndEdit').append(addFav);
+
             }
         });
     }

@@ -37,24 +37,6 @@ function newProduct(data) {
 </li>`;
     let admin_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
-<<<<<<< Updated upstream
-<div class="card">
-    <a href="product-info.html?id=${data._id}">
-        <picture>
-            <img src="${data.Img_url}" class="card-img-top" alt="product img">
-        </picture>
-    </a>
-    <div class="card-body">
-        <h2 class="card-title h4 mb-0 ${data._id}" id="${data._id}-title">${data.productName}</h2>
-        <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
-        <div class="card-link text-primary">
-            <a href="edit-product.html?id=${data._id}"><i class="fas fa-pen ${data._id} text-primary"></i></a>
-        </div>
-    </div>
-</div>
-</li>`;
-    if ($.cookie('userRole') == "admin") {
-=======
             <div class="card">
                 <a href="product-info.html?id=${data._id}">
                     <picture>
@@ -70,9 +52,7 @@ function newProduct(data) {
                 </div>
             </div>
         </li>`;
-        sessionStorage.getItem('key')
     if (sessionStorage.getItem('userRole') == "admin") {
->>>>>>> Stashed changes
         $("#product-list").append(admin_content);
     } else {
         $("#product-list").append(member_content);
@@ -80,12 +60,9 @@ function newProduct(data) {
     if (data.isDeleted) {
         $("#" + data._id + "-title").append(" 已下架");
         $("#" + data._id + "-title").addClass("text-danger");
-<<<<<<< Updated upstream
-=======
     } 
     else if (!data.isDeleted &&sessionStorage.getItem('userRole') != "admin") {
         $("#product-list").append(member_content);
->>>>>>> Stashed changes
     }
 }
 

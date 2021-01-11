@@ -90,16 +90,16 @@
 		<div class="row position-relative">
 			<div class="col-12 col-md-8 mb-7 mb-md-0">
 				<picture>
-					<source srcset="img/info/info-1.png, img/info/info-1@2x.png 2x" media="(mix-width: 768px)">
+					<!-- <source srcset="img/info/info-1.png, img/info/info-1@2x.png 2x" media="(mix-width: 768px)">
 					<source srcset="img/info/mobile/info-1-mobile.png, img/info/mobile/info-1-mobile@2x.png 2x"
-						media="(max-width: 576px)">
+						media="(max-width: 576px)"> -->
 					<img src="img/info/info-1.png" class="card-img-top" alt="product img">
 				</picture>
 			</div>
 			<div class="col-12 col-md-4 product-info">
-				<h2 class="font-weight-bold">CHANEL N°5</h2>
-				<p class="font-weight-light mb-8">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</p>
-				<span class="d-block font-weight-light mb-3">NT$4,980</span>
+				<h2 class="font-weight-bold" id = "productName"></h2>
+				<p class="font-weight-light mb-8" id ="productDetail"></p>
+				<span class="d-block font-weight-light mb-3" id = "productPrice"></span>
 				<div class="input-group">
 					<select class="custom-select border-primary">
 						<option value="1">1</option>
@@ -111,43 +111,19 @@
 							data-target="#addCart">加入購物車</button>
 					</div>
 				</div>
-				<div class="btn mb-10 mb-md-14 pl-0" onclick="addFav()">
-					<i class="fas fa-heart text-primary"></i>
-					<span>加入我的收藏</span>
+				<div class="btn mb-10 mb-md-14 pl-0" id="FavAndEdit">
+					
+                	
 				</div>
+			</div>
+			 <div class="col-12 mt-5"> 
 				<h6>商品購買須知</h6>
 				<p class="font-weight-light mb-5">產品因拍攝關係顏色可能略有差異，實際以廠商出貨為主。 商品情境照為示意用，僅商品主體不包含其他配件，請以規格內容物為主。 D’Perfume
 					盡可能確保所列商品備貨充足，但偶爾仍會有產品售罄的情況。如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。任何訂單變動均會在訂單總額與出貨訊息內更新。</p>
 				<h6>退換貨須知</h6>
 				<p class="font-weight-light mb-10 mb-md-0">
 					依《消費者保護法》的規定，於全站購物皆享有商品到貨【七日猶豫期】（含例假日）之權益。若收到的商品有任何問題，可於猶豫期內申請退貨。</p>
-			</div>
-			<div class="col-12 col-md-8">
-				<div class="row my-md-17">
-					<div class="col-md-6 mb-4 mb-md-0">
-						<picture>
-							<source srcset="img/info/info-2.png, img/info/info-2@2x.png 2x" media="(mix-width: 768px)">
-							<source srcset="img/info/mobile/info-2-mobile.png, img/info/mobile/info-2-mobile@2x.png 2x"
-								media="(max-width: 576px)">
-							<img src="img/info/info-2.png" class="card-img-top" alt="product img">
-						</picture>
-					</div>
-					<div class="col-md-6 mb-4 mb-md-0">
-						<picture>
-							<source srcset="img/info/info-3.png, img/info/info-3@2x.png 2x" media="(mix-width: 768px)">
-							<source srcset="img/info/mobile/info-3-mobile.png, img/info/mobile/info-3-mobile@2x.png 2x"
-								media="(max-width: 576px)">
-							<img src="img/info/info-3.png" class="card-img-top" alt="product img">
-						</picture>
-					</div>
-				</div>
-				<picture>
-					<source srcset="img/info/info-4.png, img/info/info-4@2x.png 2x" media="(mix-width: 768px)">
-					<source srcset="img/info/mobile/info-4-mobile.png, img/info/mobile/info-4-mobile@2x.png 2x"
-						media="(max-width: 576px)">
-					<img src="img/info/info-4.png" class="card-img-top" alt="product img">
-				</picture>
-			</div>
+			 </div> 
 		</div>
 	</div>
 	<!-- addFav modal -->
@@ -226,6 +202,8 @@
 	<!-- jud_log.js -->
 	<script src="./js/jud_log.js"></script>
 	<script src="./js/fav-list.js"></script>
+	<!-- <script src="./js/edit-product.js"></script> -->
+	<script src="./js/product-info.js"></script>
 </body>
 
 </html>
