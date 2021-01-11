@@ -3,9 +3,9 @@ $(document).ready(function () {
         //尚未登入
         document.getElementById("loginText").innerHTML = '<i class="fas fa-user-alt"></i> Log in';
 
-       $('#loginText').click(function(){
-            location.href = "../login.html";
-       });
+
+        $('#loginText').attr('href', 'login.html');
+
 
 
     }
