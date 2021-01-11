@@ -56,7 +56,8 @@ function newProduct(data) {
         $("#product-list").append(member_content);
     }
     if (data.isDeleted) {
-        $(".card-title, .${data._id}").append(" 已下架").addClass("text-danger");
+        // $(".card-title, .${data._id}").append(" 已下架");
+        // $(".card-title, .${data._id}").addClass("text-danger");
     }
 }
 
