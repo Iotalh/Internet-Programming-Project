@@ -23,7 +23,7 @@ function getfav() {
 }
 
 function showWishlist(_id){
-    const api = "/productApi/showWishlist";
+    const api = "/productApi/findByID";
     var data = {'id':_id};
     $.post(api , data, function (res) {
         if(res.status == 1 ){
