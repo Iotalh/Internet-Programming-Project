@@ -46,7 +46,8 @@ function newProduct(data) {
                 </div>
             </div>
         </li>`;
-    if ($.cookie('userRole') == "admin") {
+        
+    if (sessionStorage.getItem('userRole') == "admin") {
         $("#product-list").append(admin_content);
     }
     if (data.isDeleted) {
@@ -58,7 +59,7 @@ function newProduct(data) {
 isAdmin();
 function isAdmin() {
     console.log("判斷管理員");
-    if ($.cookie("userRole") == "admin") {
+    if (sessionStorage.getItem('userRole') == "admin") {
         console.log("管理員");
         const addProduct =
             `<li class="nav-item pr-7">
