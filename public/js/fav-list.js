@@ -1,5 +1,5 @@
 function checkLoginAndAlert() {
-    if ($.cookie('userName') == null) {
+    if (sessionStorage.getItem('userName') == null) {
         const login_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
@@ -26,6 +26,26 @@ function goToFavList() {
 function addFav(product_id) {
     console.log(product_id);
     if (checkLoginAndAlert()) {
+<<<<<<< Updated upstream
+=======
+        const api="/memberApi/addFav";  
+        var data = { 'id': _id, 'account':sessionStorage.getItem('userAccount')};
+        $.post(api, data, function (res) {
+            const addFav_content =
+             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center text-primary">${res.msg}</div>
+                    </div>
+                </div>
+            </div>`;
+            
+            $('body').append(addFav_content);
+            setTimeout("$('#addFav').remove()", 800);
+        });
+    }
+    else{
+>>>>>>> Stashed changes
         const addFav_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">

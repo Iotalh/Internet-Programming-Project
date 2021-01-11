@@ -32,7 +32,7 @@ function changePW() {
     }
     else {
         const api = "/memberApi/changePW";
-        var data = {'account': $.cookie('userAccount'), 'oldpassword': _oldPW, 'newpassword':_newPW};
+        var data = {'account': sessionStorage.getItem('key'), 'oldpassword': _oldPW, 'newpassword':_newPW};
         $.post(api, data, function (res) {
             const login_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
@@ -49,9 +49,7 @@ function changePW() {
             } else {
                 
                 $('body').append(login_content);
-                $.removeCookie("userName");
-                $.removeCookie("userAccount");
-                $.removeCookie("userRole");
+                sessionStorage.clear();
                 setTimeout(" location.href = '../login.html'", 800);
             }
          });

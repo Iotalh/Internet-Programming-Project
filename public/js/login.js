@@ -12,10 +12,9 @@ function login() {
         var data = { 'account': _account, 'password': _password };
         $.post(api, data, function (res) {
             if (res.status == 0) {
-                //console.log(data.userName);
-                $.cookie('userName', res.data.userName);
-                $.cookie('userRole', res.data.userRole);
-                $.cookie('userAccount',res.data.account);
+                sessionStorage.setItem('userName', res.data.userName);
+                sessionStorage.setItem('userRole', res.data.userRole);
+                sessionStorage.setItem('userAccount', res.data.account);
 
                 location.href = '/public/product-list.html';
                 alert("登入成功!");
