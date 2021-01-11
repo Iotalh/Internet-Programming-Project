@@ -11,15 +11,24 @@ function login() {
         const api = "/memberApi/login";
         var data = { 'account': _account, 'password': _password };
         $.post(api, data, function (res) {
+            const show_content =
+                `<div class="modal fade show pr-4 d-block" id="show" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
+                   <div class="modal-dialog modal-dialog-centered">
+                       <div class="modal-content">
+                           <div class="modal-body text-center text-primary">${res.msg}</div>
+                       </div>
+                   </div>
+               </div>`; 
+
+               $('body').append(show_content);
             if (res.status == 0) {
                 sessionStorage.setItem('userName', res.data.userName);
                 sessionStorage.setItem('userRole', res.data.userRole);
                 sessionStorage.setItem('userAccount', res.data.account);
-
-                location.href = '/public/product-list.html';
-                alert("登入成功!");
+                
+                setTimeout("location.href = '/public/product-list.html'", 800);
             } else {
-                alert(res.msg);
+                setTimeout("location.href = 'login.html'", 800);
             }
         });
     }
