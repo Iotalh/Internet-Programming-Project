@@ -23,6 +23,7 @@ router.post('/createProduct', function (req, res) {
         }
     });
 });
+var ObjectId = require('mongoose').Types.ObjectId;
 
 // 存取所有商品
 router.get('/readProducts', function (req, res) {
@@ -32,31 +33,33 @@ router.get('/readProducts', function (req, res) {
         res.send(data);
     });
 });
+
 //讀取要更新的商品資料
 router.get('/chooseProduct', function (req, res) {
-    const id = new productModel.Products.ObjectID(req.query.id);
-    console.log("choose id: " + id);
-    productModel.find({"_id": id}, function (err, data) {
+    const id = req.query.id;
+    const query = { "_id": id };
+    productModel.findOne(query, function (err, data) {
         if (err) console.log(err);
-        console.log(data);
+        // console.log("data: " + data);
         res.send(data);
     });
 });
+
 // 更新商品
 router.post('/updateProduct', function (req, res) {
-    const id = new productModel.Products.ObjectID(req.query.id);
-    console.log("upadte id: " + id);
-    productModel.find({"_id": ObjectId(id)}, function (err, data) {
+    const id = req.query.id;
+    const query = { "_id": id };
+    productModel.findOne(query, function (err, data) {
         if (err) {
             console.log(err);
             res.json({ "status": 1, "msg": "error" });
         } else {
-            data.productName = req.body.productName,
-                data.Img_url = req.body.Img_url,
-                data.productPrice = req.body.productPrice,
-                data.productDetail = req.body.productDetail,
-                data.tags = req.body.tags,
-                data.isDeleted = req.body.isDeleted
+            data.productName = req.body.productName;
+            data.Img_url = req.body.Img_url;
+            data.productPrice = req.body.productPrice;
+            data.productDetail = req.body.productDetail;
+            data.tags = req.body.tags;
+            data.isDeleted = req.body.isDeleted;
             data.save(function (err) {
                 if (err) {
                     console.log(err);
