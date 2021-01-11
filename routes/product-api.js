@@ -71,8 +71,8 @@ router.post('/updateProduct', function (req, res) {
         }
     });
 });
-//顯示收藏路由
-router.post('/showWishlist', function (req, res) {
+//用商品_id查找資料路由
+router.post('/findByID', function (req, res) {
     productModel.findOne({"_id": req.body.id}, function (err, data) {
         if(data == null){
             res.json({ "status": 1, "msg": "null" });
