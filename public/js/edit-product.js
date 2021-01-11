@@ -2,20 +2,18 @@ let url = new URL(window.location.href);
 let parmas = url.searchParams;
 const _id = parmas.get('id');
 console.log("id: " + _id);
-
-getProduct();
-function getProduct() {
-    const choose = "/productApi/chooseProduct";
-    const pickId = { '_id': _id };
-    $.get(choose, pickId, function (data, status) {
+getProduct(_id);
+function getProduct(_id) {
+    const choose = "/productApi/chooseProduct?id=" + _id;
+    $.get(choose, function (data, status) {
         $('#productName').val(data.productName);
         $('#productLink').val(data.Img_url);
         $('#productPrice').val(data.productPrice);
         $('#productDetail').val(data.productDetail);
         $('#productTag').val(data.tags);
-        $('#productAvailable').val(data.isDeleted);
+        $('#productAvailable').val((data.isDeleted? "true":"false"));
     });
-
+    editProduct();
 }
 
 function editProduct() {
