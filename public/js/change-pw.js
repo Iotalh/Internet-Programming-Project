@@ -32,7 +32,7 @@ function changePW() {
     }
     else {
         const api = "/memberApi/changePW";
-        var data = {'account': sessionStorage.getItem('key'), 'oldpassword': _oldPW, 'newpassword':_newPW};
+        var data = {'account': sessionStorage.getItem('userAccount'), 'oldpassword': _oldPW, 'newpassword':_newPW};
         $.post(api, data, function (res) {
             const login_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
