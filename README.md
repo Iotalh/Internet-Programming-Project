@@ -6,13 +6,12 @@ Internet Programming Final Projects
 
 # 目錄
 
-[一、主題](https://github.com/Iotalh/Internet-Programming-Project#%E4%B8%80%E4%B8%BB%E9%A1%8C)
-[二、緣由動機與目的（興趣導向）](https://github.com/Iotalh/Internet-Programming-Project#%E4%BA%8C%E7%B7%A3%E7%94%B1%E5%8B%95%E6%A9%9F%E8%88%87%E7%9B%AE%E7%9A%84%E8%88%88%E8%B6%A3%E5%B0%8E%E5%90%91)
-[三、使用方法](https://github.com/Iotalh/Internet-Programming-Project#%E4%B8%89%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
-[四、開發流程規劃](https://github.com/Iotalh/Internet-Programming-Project#%E5%9B%9B%E9%96%8B%E7%99%BC%E6%B5%81%E7%A8%8B%E8%A6%8F%E5%8A%83)
-[五、系統架構](https://github.com/Iotalh/Internet-Programming-Project#%E4%BA%94%E7%B3%BB%E7%B5%B1%E6%9E%B6%E6%A7%8B)
+[一、主題](https://github.com/Iotalh/Internet-Programming-Project#%E4%B8%80%E4%B8%BB%E9%A1%8C)  
+[二、緣由動機與目的（興趣導向）](https://github.com/Iotalh/Internet-Programming-Project#%E4%BA%8C%E7%B7%A3%E7%94%B1%E5%8B%95%E6%A9%9F%E8%88%87%E7%9B%AE%E7%9A%84%E8%88%88%E8%B6%A3%E5%B0%8E%E5%90%91)  
+[三、使用方法](https://github.com/Iotalh/Internet-Programming-Project#%E4%B8%89%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)  
+[四、開發流程規劃](https://github.com/Iotalh/Internet-Programming-Project#%E5%9B%9B%E9%96%8B%E7%99%BC%E6%B5%81%E7%A8%8B%E8%A6%8F%E5%8A%83)  
+[五、系統架構](https://github.com/Iotalh/Internet-Programming-Project#%E4%BA%94%E7%B3%BB%E7%B5%B1%E6%9E%B6%E6%A7%8B)  
 [六、網站樣貌呈現](https://github.com/Iotalh/Internet-Programming-Project#%E5%85%AD%E7%B6%B2%E7%AB%99%E6%A8%A3%E8%B2%8C%E5%91%88%E7%8F%BE)
-
 
 # 一、主題
 
