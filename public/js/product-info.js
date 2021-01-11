@@ -17,6 +17,11 @@ $(document).ready(function(){
                 `<a href="../edit-product.html?${_id}"><i class="fas fa-pen text-primary"></i></a>`;
                 $('#FavAndEdit').append(edit);
             }
+            else{
+                let addFav=
+                `<i class="fas fa-heart text-primary" onclick="addFav_info()"></i>`;
+                $('#FavAndEdit').append(edit);
+            }
         });
     }
 })
