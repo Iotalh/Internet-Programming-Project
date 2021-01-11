@@ -1,6 +1,6 @@
 getfav();
 function getfav() {
-    const api = "/memberApi/findfav";
+    const api = "/memberApi/findFav";
     var data = {'account':$.cookie('userAccount')};
     $.post(api , data, function (res) {
         console.log(res.data.length);
