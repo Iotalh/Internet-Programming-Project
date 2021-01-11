@@ -10,6 +10,7 @@ $(document).ready(function(){
             $("#productName").text(res.data.productName);
             $('#productDetail').text(res.data.productDetail);
             $('#productPrice').text('NT$' + res.data.productPrice);
+            $('#productImg').attr('src', res.data.Img_url);
             if(sessionStorage.getItem('userRole')== "admin"){
 
                 let edit=
