@@ -47,7 +47,7 @@ router.get('/chooseProduct', function (req, res) {
 
 // 更新商品
 router.post('/updateProduct', function (req, res) {
-    const id = req.query.id;
+    const id = req.body._id;
     const query = { "_id": id };
     productModel.findOne(query, function (err, data) {
         if (err) {
