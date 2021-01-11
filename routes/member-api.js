@@ -106,3 +106,16 @@ router.post('/addFav', function (req, res, next) {
         }
     });
 });
+
+router.post('/findfav', function (req, res, next) {
+    console.log("456");
+    //console.log(req.body.account);
+    memberModel.findOne({account:req.body.account},function(err, data){
+        if(data == null){
+            res.json({ "status": 0, "msg": "失敗" });
+        }
+        else{
+            res.json({ "status": 1, "msg": "成功","data":data.favItem });
+        }
+    });
+});
