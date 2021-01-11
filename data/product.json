@@ -1,0 +1,85 @@
+[{
+    "productName": "CHANELN°1",
+    "Img_url": "img/product/item-1.png",
+    "productPrice": 1980,
+    "productDetail": "N°1，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "女用",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°2",
+    "Img_url": "img/product/item-2.png",
+    "productPrice": 2980,
+    "productDetail": "N°2，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "男用",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°3",
+    "Img_url": "img/product/item-3.png",
+    "productPrice": 3980,
+    "productDetail": "N°3，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°4",
+    "Img_url": "img/product/item-4.png",
+    "productPrice": 3490,
+    "productDetail": "CHANELN°4",
+    "tags": "男用",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°5",
+    "Img_url": "img/product/item-5.png",
+    "productPrice": 1290,
+    "productDetail": "CHANELN°4",
+    "tags": "女用",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°6",
+    "Img_url": "img/product/item-6.png",
+    "productPrice": 6790,
+    "productDetail": "CHANELN°6",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°7",
+    "Img_url": "img/product/item-7.png",
+    "productPrice": 3490,
+    "productDetail": "CHANELN°7",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°8",
+    "Img_url": "img/product/item-8.png",
+    "productPrice": 4690,
+    "productDetail": "N°8，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°9",
+    "Img_url": "img/product/item-9.png",
+    "productPrice": 5590,
+    "productDetail": "N°9，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°10",
+    "Img_url": "img/product/item-10.png",
+    "productPrice": 3980,
+    "productDetail": "N°10，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°11",
+    "Img_url": "img/product/item-11.png",
+    "productPrice": 9970,
+    "productDetail": "N°11，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "中性",
+    "isDeleted": false
+}, {
+    "productName": "CHANELN°12",
+    "Img_url": "img/product/item-12.png",
+    "productPrice": 12890,
+    "productDetail": "N°12，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。",
+    "tags": "女用",
+    "isDeleted": false
+}]

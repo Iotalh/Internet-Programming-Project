@@ -1,7 +1,5 @@
 
 readProducts();
-//儲存商品_id
-let _id
 
 function readProducts() {
     const api = "/productApi/readProducts";
@@ -13,8 +11,6 @@ function readProducts() {
 }
 
 function newProduct(data) {
-    let status = (data.status) ? "checked" : "";
-    _id = data._id;
     let member_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
         <div class="card">
@@ -28,16 +24,11 @@ function newProduct(data) {
             <p class="card-text font-weight-light mb-1">NT$${data.productPrice}</p>
             <div class="card-link text-primary">
 
-<<<<<<< Updated upstream
-            <a href="#id=${data._id}"><i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav()"></i></a>
-=======
+
             <a href="#id=${data._id}"><i class="fas fa-heart ${data._id}" data-toggle="modal" data-target="#addFav" onclick="addFav('${data._id}')"></i></a>
 
->>>>>>> Stashed changes
             </div>
-        </div>
-    </div>
-</li>`;
+        </li>`;
     let admin_content =
         `<li class="col-6 col-md-3 mb-8 mb-md-13" data-aos="fade-up">
             <div class="card">
@@ -55,17 +46,17 @@ function newProduct(data) {
                 </div>
             </div>
         </li>`;
+        
     if (sessionStorage.getItem('userRole') == "admin") {
         $("#product-list").append(admin_content);
-    } else {
-        $("#product-list").append(member_content);
     }
     if (data.isDeleted) {
         $("#" + data._id + "-title").append(" 已下架");
-        $("#" + data._id + "-title").addClass("text-danger
-    } else if (!data.isDeleted && $.cookie('userRole') != "admin") {
+        $("#" + data._id + "-title").addClass("text-danger");
+    }else if(!data.isDeleted && sessionStorage.getItem('userRole') != "admin"){
         $("#product-list").append(member_content);
-    }  
+
+    }
 }
 
 isAdmin();

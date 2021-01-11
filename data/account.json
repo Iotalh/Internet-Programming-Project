@@ -1,0 +1,11 @@
+[{
+    "userRole": "member",
+    "userName": "a",
+    "account": "a@a.a",
+    "password": "$2b$10$CBTfGTkqxJm2k741r81jFu8zt15NeHfPsrbpKyMlPmV578mgYpD/2"
+}, {
+    "userRole": "admin",
+    "userName": "b",
+    "account": "b@b.b",
+    "password": "$2b$10$nmxaoOaqaaNiHxssnPHEs.WzQOq7s65SwzOAGqiFieXqgqk8f.eTy"
+}]
