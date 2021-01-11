@@ -50,15 +50,14 @@ function newProduct(data) {
     </div>
 </div>
 </li>`;
-    if (data.userRole == "admin") {
+    if ($.cookie('userRole') == "admin") {
         $("#product-list").append(admin_content);
     } else {
         $("#product-list").append(member_content);
     }
-    if (data.isDeleted) {
-        // $(".card-title, .${data._id}").append(" 已下架");
-        // $(".card-title, .${data._id}").addClass("text-danger");
-    }
+    // if (data.isDeleted) {
+    //     $(".card-title, ."+ data._id).append(" 已下架").addClass("text-danger");
+    // }
 }
 
 isAdmin();
