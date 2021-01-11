@@ -86,11 +86,21 @@ router.post('/addFav', function (req, res, next) {
         if (data == null) {
             res.json({ "status": 1, "msg": "該帳號不存在" });
         }else{
-            memberModel.updateOne({ account : req.body.account },{ $push: { favItem: req.body.id}},function(err, data){
-                if(err){
-                    res.json({ "status": 1, "msg": "收藏失敗" });
-                }else{
-                    res.json({ "status": 0, "msg": "收藏成功" });
+            //是否已收藏過
+            memberModel.findOne({account:req.body.account,favItem:req.body.id},function(err, data1){
+                console.log(data1);
+                if(data1 == null){
+                    //新增收藏
+                    memberModel.updateOne({ account : req.body.account },{ $push: { favItem: req.body.id}},function(err, data){
+                        if(err){
+                            res.json({ "status": 1, "msg": "收藏失敗" });
+                        }else{
+                            res.json({ "status": 0, "msg": "收藏成功" });
+                        }
+                    });
+                }
+                else{
+                    res.json({ "status": 1, "msg": "商品已在收藏中" });
                 }
             });
         }
