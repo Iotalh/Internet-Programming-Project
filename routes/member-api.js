@@ -59,21 +59,23 @@ router.post('/changePW', function (req, res, next) {
         function (err, data) {
             bcrypt.compare(req.body.oldpassword, data.password).then(function (check) {
                 console.log(check);
-            if (check == false) {
-                res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
-            } else {
-                const saltRounds = 10;
-                const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
-                data.password = hash;
-                data.save(function (err) {
-                    if (err) {
-                        res.json({ "status": 1, "msg": "更改失敗" });
-                    } else {
-                        res.json({ "status": 0, "msg": "更改成功" });
-                    }
-                });
-            
-            }
+                if (check == false) {
+                    console.log("舊密碼輸入錯誤");
+                    res.json({ "status": 1, "msg": "舊密碼輸入錯誤!" });
+                } else {
+                    const saltRounds = 10;
+                    const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
+                    memberModel.updateOne({ account : req.body.account },{$set:{password:hash}},function(err, data){
+                        if(err){
+                            console.log("更改失敗");
+                            res.json({ "status": 1, "msg": "更改失敗" });
+                        }else{
+                            console.log("更改成功");
+                            res.json({ "status": 0, "msg": "更改成功" });
+                        }
+                    });
+                
+                }
             });
         });
 });

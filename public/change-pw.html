@@ -35,10 +35,18 @@
 					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="product-list.html"><i
 							class="fas fa-tshirt"></i> Product</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="login.html"><i
-							class="fas fa-user-alt"></i>
-						log in </a>
+				<li class="nav-item" id="not-login">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
+						href="login.html"><i class="fas fa-user-alt"></i> Log in</a>
+				</li>
+				<li class="nav-item d-none" id="login-item">
+					<!-- 下拉式選單 -->
+					<div id="login">
+						<!-- 登入狀態 -->
+						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 dropdown-toggle"
+							type="button" id="login-text" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="true"></a>
+					</div>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="#"><i
@@ -118,7 +126,7 @@
 					<div class="d-flex align-items-center justify-content-between">
 						
 						<div class="d-flex justify-content-end">
-							<input type="submit" class="btn btn-primary" value="確定" onclick="changePW()">
+							<button type = "button" class="btn btn-primary" onclick="changePW()">確定</button>
 							<button type="reset" class="btn btn-border-primary ml-2">清空</button>
 						</div>
 					</div>
@@ -190,6 +198,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<!-- change-pw.js -->
 	<script src="./js/change-pw.js"></script>
+	<!-- fav-list.js -->
+	<script src="./js/fav-list.js"></script>
 </body>
 
 </html>

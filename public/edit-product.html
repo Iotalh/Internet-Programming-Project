@@ -34,10 +34,19 @@
                     <a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
                         href="product-list.html"><i class="fas fa-tshirt"></i> Product</a>
                 </li>
-                <li class="nav-item">
-                    <h5 class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"><i
-                            class="fas fa-user-alt"></i> log out</h5>
-                </li>
+				<li class="nav-item" id="not-login">
+					<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8"
+						href="login.html"><i class="fas fa-user-alt"></i> Log in</a>
+				</li>
+				<li class="nav-item d-none" id="login-item">
+					<!-- 下拉式選單 -->
+					<div id="login">
+						<!-- 登入狀態 -->
+						<a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8 dropdown-toggle"
+							type="button" id="login-text" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="true"></a>
+					</div>
+				</li>
                 <li class="nav-item">
                     <a class="nav-link h5 font-weight-normal text-secondary-dark mb-0 pl-0 pr-8" href="fav-list.html"><i
                             class="fas fa-heart"></i>
@@ -115,9 +124,9 @@
                             class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">商品標籤</label>
                         <div class="col-3 col-md-2">
                             <select id="productTag" class="form-control">
-                                <option selected>中性</option>
-                                <option>男用</option>
-                                <option>女用</option>
+                                <option value="中性" selected>中性</option>
+                                <option value="男用">男用</option>
+                                <option value="女用">女用</option>
                             </select>
                         </div>
                     </div>
@@ -133,14 +142,14 @@
                             class="col-4 col-sm-3 col-md-2 col-form-label text-gray text-nowrap">上架狀態</label>
                         <div class="col-3 col-md-2">
                             <select id="productAvailable" class="form-control">
-                                <option selected>上架中</option>
-                                <option>下架</option>
+                                <option value="false" selected>上架中</option>
+                                <option value="true">下架</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="offset-4 offset-sm-3 offset-md-2 col-6 col-md-4">
-                            <button type="submit" class="btn btn-primary w-100 m-0">確定修改</button>
+                            <button type="submit" class="btn btn-primary w-100 m-0" onclick="editProduct()">確定修改</button>
                         </div>
                     </div>
                     <div id="errmsg" class="col-sm text-danger"></div>
@@ -209,7 +218,9 @@
 	</script>
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- edit-product -->
+    <script src="./js/edit-product.js"></script>
 </body>
 
 </html>

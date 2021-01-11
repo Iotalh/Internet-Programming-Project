@@ -9,7 +9,7 @@ function checkLoginAndAlert() {
                 </div>
             </div>`;
         $('body').append(login_content);
-        setTimeout(" location.href = '/public/login.html'", 500);
+        setTimeout(" location.href = '/public/login.html'", 800);
         return false;
     }
     else {
@@ -22,6 +22,7 @@ function goToFavList() {
         location.href = '/public/fav-list.html';
     }
 }
+
 function addFav(_id) {
     if (checkLoginAndAlert()) {
         const api="/memberApi/addFav";
@@ -49,8 +50,8 @@ function addFav(_id) {
                     </div>
                 </div>
             </div>`;
-
          $('body').append(addFav_content);
          setTimeout("$('#addFav').remove()", 800);
+
     }
 }
