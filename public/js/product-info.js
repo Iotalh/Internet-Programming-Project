@@ -14,7 +14,7 @@ $(document).ready(function(){
             if(sessionStorage.getItem('userRole')== "admin"){
 
                 let edit=
-                `<a href="../edit-product.html?${_id}"><i class="fas fa-pen text-primary"></i></a>`;
+                `<a href="../edit-product.html?id=${_id[1]}"><i class="fas fa-pen ${_id[1]} text-primary"></i></a>`;
                 $('#FavAndEdit').append(edit);
             }
             else{
