@@ -80,14 +80,15 @@ router.post('/changePW', function (req, res, next) {
 //新增收藏路由
 router.post('/addFav', function (req, res, next) {
     memberModel.findOne({account:req.body.account},function(err, data){
+        console.log(req.body.id);
         if (data == null) {
             res.json({ "status": 1, "msg": "該帳號不存在" });
         }else{
-            memberModel.updateOne({ account : req.body.account },{ $push: { favItem:  req.body.id}},function(err, data){
+            memberModel.updateOne({ account : req.body.account },{ $push: { favItem: req.body.id}},function(err, data){
                 if(err){
-                    res.json({ "status": 1, "msg": "fail" });
+                    res.json({ "status": 1, "msg": "收藏失敗" });
                 }else{
-                    res.json({ "status": 0, "msg": "success" });
+                    res.json({ "status": 0, "msg": "收藏成功" });
                 }
             });
         }
