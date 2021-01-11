@@ -1,7 +1,8 @@
 getfav();
 function getfav() {
     const api = "/memberApi/findFav";
-    var data = {'account':$.cookie('userAccount')};
+    var data = {'account':sessionStorage.getItem('userAccount')};
+
     $.post(api , data, function (res) {
         console.log(res.data.length);
         if(res.data.length == 0){
@@ -57,7 +58,8 @@ function showWishlist(_id){
 function delFav(_id){
     console.log(_id);
     const api = "/memberApi/delFav";
-    var data = {'account':$.cookie('userAccount'),'id':_id};
+    var data = {'account':sessionStorage.getItem('userAccount'),'id':_id};
+
     $.post(api , data, function (res) {
         const delFav_content =
         `<div class="modal fade show pr-4 d-block" id="delFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">

@@ -1,5 +1,5 @@
 function checkLoginAndAlert() {
-    if ($.cookie('userName') == null) {
+    if (sessionStorage.getItem('userName') == null) {
         const login_content =
             `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
@@ -25,8 +25,8 @@ function goToFavList() {
 
 function addFav(_id) {
     if (checkLoginAndAlert()) {
-        const api="/memberApi/addFav";
-        var data = { 'id': _id, 'account': $.cookie('userAccount')};
+        const api="/memberApi/addFav";  
+        var data = { 'id': _id, 'account':sessionStorage.getItem('userAccount')};
         $.post(api, data, function (res) {
             const addFav_content =
              `<div class="modal fade show pr-4 d-block" id="addFav" tabindex="-1" aria-labelledby="addFav" aria-modal="true" role="dialog">
